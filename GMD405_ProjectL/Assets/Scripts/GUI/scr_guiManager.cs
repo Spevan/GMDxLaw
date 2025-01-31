@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class scr_guiManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static scr_guiManager instance {  get; private set; }
+
+    private void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 }

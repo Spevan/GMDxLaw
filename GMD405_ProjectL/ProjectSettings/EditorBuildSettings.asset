@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/sce_test.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/sce_gui.unity
+    guid: c66a62c56b7c5844abf63abb6f50e9b2
+  - enabled: 1
+    path: Assets/Scenes/sce_jurorSelect.unity
+    guid: 8277101302ca7f449a034927efaad8a4
   m_configObjects: {}
