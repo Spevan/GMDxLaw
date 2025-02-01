@@ -6,6 +6,9 @@ public class scr_guiManager : MonoBehaviour
 {
     public static scr_guiManager instance {  get; private set; }
 
+    public int FavorableNum;
+    public scr_favorabilityBar favorabilityBar;
+
     private void Awake()
     {
         if (instance == null)
@@ -16,5 +19,11 @@ public class scr_guiManager : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+
+    public void ChangeFavorability(int num)
+    {
+        FavorableNum += num;
+        favorabilityBar.ChangeMarkerPos(num);
     }
 }

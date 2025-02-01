@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class scr_favorabilityBar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject favorMarker;
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeMarkerPos(int num)
     {
-        
+        favorMarker.transform.Translate(new Vector3(num, 0, 0));
     }
 }

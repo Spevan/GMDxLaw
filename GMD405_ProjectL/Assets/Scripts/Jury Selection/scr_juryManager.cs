@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using TMPro;
 using UnityEditor.SearchService;
 using UnityEngine;
@@ -59,5 +60,18 @@ public class scr_juryManager : MonoBehaviour
         GUIText[5].text = jurors[jurorNum].Answers[0].answer;
         GUIText[6].text = jurors[jurorNum].Answers[1].question;
         GUIText[7].text = jurors[jurorNum].Answers[1].answer;
+    }
+
+    public void RemoveJuror()
+    {
+        int pointTotal = 0;
+        for(int i = 0; i < jurors[currentJuror].Answers.Count; i++)
+        {
+            pointTotal += jurors[currentJuror].Answers[i].points;
+        }
+
+        scr_guiManager.instance.ChangeFavorability(pointTotal);
+        jurors.RemoveAt(currentJuror);
+        NextJuror();
     }
 }
