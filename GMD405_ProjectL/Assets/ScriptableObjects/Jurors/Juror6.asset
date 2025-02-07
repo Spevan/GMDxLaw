@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0c8befe136dd14a87cbf11984e183e, type: 3}
+  m_Name: Juror6
+  m_EditorClassIdentifier: 
+  name: Carolina Ileana
+  birthdate: 8/20/2003
+  address: 1870 Florence St.
+  sex: 70
+  Answers:
+  - {fileID: 11400000, guid: ebfd2f6f982b0604fb360ad3431a0652, type: 2}
+  - {fileID: 11400000, guid: fe9ac2cf45549434cb782e1e68d8388c, type: 2}

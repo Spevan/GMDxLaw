@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0c8befe136dd14a87cbf11984e183e, type: 3}
+  m_Name: Juror4
+  m_EditorClassIdentifier: 
+  name: "Ji-Yeong T\u014Dru"
+  birthdate: 6/17/2006
+  address: 2624 Morningview Ln.
+  sex: 70
+  Answers:
+  - {fileID: 11400000, guid: ff5afad23653af6489f5deea09d283dc, type: 2}
+  - {fileID: 11400000, guid: aa3ba5981978f9f4daf14909c9f97ecd, type: 2}
