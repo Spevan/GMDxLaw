@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 2363 Modoc Alley
   sex: 70
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 2d26db7009bc94849bc550303d5b40e5, type: 2}
+  - {fileID: 11400000, guid: 1f1eebf1481a15b419b7055b0dd91476, type: 2}

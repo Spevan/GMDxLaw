@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: Have you or your immediate family ever worked in the sporting equipment
     business?
-  answer: 
-  points: 0
+  answer: Yes
+  points: -3

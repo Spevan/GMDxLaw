@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 299 Oakridge Farm Ln.
   sex: 70
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: ff5afad23653af6489f5deea09d283dc, type: 2}
+  - {fileID: 11400000, guid: 5a69e21256509b44e9c8f952a586081d, type: 2}

@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 2866 Tree Frog Ln.
   sex: 77
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 6267c48842de47f44b0331dd51621655, type: 2}
+  - {fileID: 11400000, guid: ebfd2f6f982b0604fb360ad3431a0652, type: 2}

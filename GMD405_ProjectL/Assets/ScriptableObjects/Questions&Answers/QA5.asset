@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: Have you been treated by Dr. James L. Goodwill or Dr. Edwin L. Granite
     or anyone associated with them?
-  answer: 
+  answer: Yes
   points: 0

@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 2828 Hillview St.
   sex: 70
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 30f730a06131a1e4f99b2d8076f3b78f, type: 2}
+  - {fileID: 11400000, guid: 5fedb4f9ed8307542b4a87cb0de70c98, type: 2}

@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 4765 Poplar St.
   sex: 77
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: b76e58b2f31e8ef4c8dd4c4eb828d344, type: 2}
+  - {fileID: 11400000, guid: 2d26db7009bc94849bc550303d5b40e5, type: 2}

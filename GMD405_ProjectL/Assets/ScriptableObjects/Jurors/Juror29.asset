@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 71 Crummit Ln.
   sex: 77
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: aa3ba5981978f9f4daf14909c9f97ecd, type: 2}
+  - {fileID: 11400000, guid: fe9ac2cf45549434cb782e1e68d8388c, type: 2}

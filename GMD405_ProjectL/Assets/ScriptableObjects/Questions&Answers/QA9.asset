@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: QA9
   m_EditorClassIdentifier: 
   question: Have you ever been a plaintiff in a personal injury negligence claim?
-  answer: 
-  points: 0
+  answer: Yes
+  points: 10

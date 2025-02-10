@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: Are you or your immediate family engaged in the sporting equipment business
     or are you an agent for the sporting equipment business?
-  answer: 
-  points: 0
+  answer: Yes
+  points: -10

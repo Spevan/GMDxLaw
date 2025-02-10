@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 2628 Joyce St.
   sex: 70
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 5a69e21256509b44e9c8f952a586081d, type: 2}
+  - {fileID: 11400000, guid: 5fedb4f9ed8307542b4a87cb0de70c98, type: 2}

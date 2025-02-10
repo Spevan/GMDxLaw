@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 1870 Turnpike Dr.
   sex: 77
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 6267c48842de47f44b0331dd51621655, type: 2}
+  - {fileID: 11400000, guid: ca92942b27614d146ac1d037effcdd80, type: 2}

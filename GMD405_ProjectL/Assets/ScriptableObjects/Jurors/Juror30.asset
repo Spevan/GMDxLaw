@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 2669 Straford Park
   sex: 70
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: f05659c9111f31a4caa160246918b8f0, type: 2}
+  - {fileID: 11400000, guid: cedfbbb421dcee746b299ac5797a474d, type: 2}

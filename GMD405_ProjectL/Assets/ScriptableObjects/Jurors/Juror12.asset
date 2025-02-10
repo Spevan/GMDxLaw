@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 3316 Star Rt.
   sex: 70
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: b76e58b2f31e8ef4c8dd4c4eb828d344, type: 2}
+  - {fileID: 11400000, guid: 5fedb4f9ed8307542b4a87cb0de70c98, type: 2}

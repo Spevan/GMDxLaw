@@ -18,4 +18,4 @@ MonoBehaviour:
   sex: 70
   Answers:
   - {fileID: 11400000, guid: ebfd2f6f982b0604fb360ad3431a0652, type: 2}
-  - {fileID: 11400000, guid: fe9ac2cf45549434cb782e1e68d8388c, type: 2}
+  - {fileID: 11400000, guid: ca92942b27614d146ac1d037effcdd80, type: 2}

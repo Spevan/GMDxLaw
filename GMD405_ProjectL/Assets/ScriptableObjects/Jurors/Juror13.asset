@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 4981 Rainbow Rd.
   sex: 70
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 30f730a06131a1e4f99b2d8076f3b78f, type: 2}
+  - {fileID: 11400000, guid: ebfd2f6f982b0604fb360ad3431a0652, type: 2}

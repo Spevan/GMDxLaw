@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: QA3
   m_EditorClassIdentifier: 
   question: 'Have you ever been a defendant in a personal injury negligance claim? '
-  answer: 
-  points: 0
+  answer: Yes
+  points: 3

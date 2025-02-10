@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: Has any member of your immediate family been a plaintiff in a personal
     injury negligence claim?
-  answer: 
-  points: 0
+  answer: Yes
+  points: 5

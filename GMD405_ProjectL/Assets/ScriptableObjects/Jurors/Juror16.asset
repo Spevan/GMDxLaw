@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 256 Parrill Ct.
   sex: 70
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: fe9ac2cf45549434cb782e1e68d8388c, type: 2}
+  - {fileID: 11400000, guid: 6b7a92b45938c694da5b849880b9e859, type: 2}

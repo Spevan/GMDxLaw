@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 3903 Pride Ave.
   sex: 77
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 9bc3c23b8e4cb0f45957a8c797a976ee, type: 2}
+  - {fileID: 11400000, guid: 2d26db7009bc94849bc550303d5b40e5, type: 2}

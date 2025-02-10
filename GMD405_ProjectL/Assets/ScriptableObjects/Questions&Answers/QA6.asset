@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: Are you or your immediate family stockholders or employed by stockholders
     for any manufacturer, distributor or dealer of sporting equipment?
-  answer: 
-  points: 0
+  answer: Yes
+  points: -5

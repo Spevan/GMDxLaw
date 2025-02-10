@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: QA1
   m_EditorClassIdentifier: 
   question: Do you know the defendant in this matter?
-  answer: 
+  answer: Yes
   points: 0

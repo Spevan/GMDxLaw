@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 408 Isaacs Creek Rd.
   sex: 77
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: aa3ba5981978f9f4daf14909c9f97ecd, type: 2}
+  - {fileID: 11400000, guid: 9bc3c23b8e4cb0f45957a8c797a976ee, type: 2}

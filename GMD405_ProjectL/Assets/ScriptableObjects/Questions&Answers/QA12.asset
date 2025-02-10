@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: Have you ever been injured due to an accident with any type of sporting
     equipment?
-  answer: 
-  points: 0
+  answer: Yes
+  points: 10

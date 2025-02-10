@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 3861 Gore St.
   sex: 70
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: cedfbbb421dcee746b299ac5797a474d, type: 2}
+  - {fileID: 11400000, guid: 030d8cc824ae4974f98e120ebfff87b5, type: 2}

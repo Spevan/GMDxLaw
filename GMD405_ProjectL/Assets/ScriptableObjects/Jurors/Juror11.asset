@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 2801 Pearcy Ave.
   sex: 77
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 6b7a92b45938c694da5b849880b9e859, type: 2}
+  - {fileID: 11400000, guid: 5a69e21256509b44e9c8f952a586081d, type: 2}

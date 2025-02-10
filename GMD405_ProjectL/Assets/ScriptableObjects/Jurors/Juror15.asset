@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 668 Bubby Dr.
   sex: 77
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 4e82e2062bc031f4e927c05b72656ed5, type: 2}
+  - {fileID: 11400000, guid: f05659c9111f31a4caa160246918b8f0, type: 2}

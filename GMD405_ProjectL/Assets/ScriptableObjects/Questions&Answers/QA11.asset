@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: QA11
   m_EditorClassIdentifier: 
   question: Have you ever been injurted due to an accident with any type of product?
-  answer: 
-  points: 0
+  answer: Yes
+  points: 5

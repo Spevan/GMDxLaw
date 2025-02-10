@@ -17,5 +17,5 @@ MonoBehaviour:
   address: 1190 Joyce St.
   sex: 77
   Answers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 6267c48842de47f44b0331dd51621655, type: 2}
+  - {fileID: 11400000, guid: 1f1eebf1481a15b419b7055b0dd91476, type: 2}

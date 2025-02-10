@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: QA4
   m_EditorClassIdentifier: 
   question: Has any member of your immediate family been such a defendant?
-  answer: 
-  points: 0
+  answer: Yes
+  points: 2
