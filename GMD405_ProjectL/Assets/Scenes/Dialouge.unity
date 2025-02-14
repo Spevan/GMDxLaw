@@ -470,7 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d6cb2df83df0e409378e9a8c037ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inkJsonFile: {fileID: 4900000, guid: 7cec9c0600d5e7340a1870be711222c2, type: 3}
+  _inkJsonFile: {fileID: 4900000, guid: e31abec425ed49549b5eaa58f80c8802, type: 3}
   dialogueBox: {fileID: 1395197065}
   nameTag: {fileID: 707403258}
 --- !u!1 &1325073645
