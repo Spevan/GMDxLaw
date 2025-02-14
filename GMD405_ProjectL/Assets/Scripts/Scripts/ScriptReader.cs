@@ -33,6 +33,8 @@ public class ScriptReader : MonoBehaviour
 
         _StoryScript = new Story(_inkJsonFile.text);
 
+        _StoryScript.BindExternalFunction("Name", (string charName) => ChangeName(charName));
+
     }
 
     public void DisplayNextLine()
@@ -49,6 +51,15 @@ public class ScriptReader : MonoBehaviour
         {
             dialogueBox.text = "thats all folks";
         }
+    }
+
+    public void ChangeName(string name)
+    {
+
+        string SpeakerName = name;
+
+        nameTag.text = SpeakerName;
+
     }
 
 }
