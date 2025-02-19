@@ -14,6 +14,12 @@ public class ScriptReader : MonoBehaviour
     public TMP_Text dialogueBox;
     public TMP_Text nameTag;
 
+    [SerializeField]
+    private GridLayoutGroup choiceHolder;
+
+    [SerializeField]
+    private Button choiceBasePrefab;
+
     void Start ()
     {
         LoadStory();
@@ -47,9 +53,60 @@ public class ScriptReader : MonoBehaviour
             text = text?.Trim(); //Removes White space from the Text
             dialogueBox.text = text; //display new text
         }
+        else if (_StoryScript.currentChoices.Count > 0)
+        {
+            DisplayChoices();
+            
+        }
         else
         {
-            dialogueBox.text = "thats all folks";
+            dialogueBox.text = "the END"; //Displays when text is over 
+        }
+    }
+
+    private void DisplayChoices()
+    {
+        //checks if button holder has buttons in it
+        if (choiceHolder.GetComponentsInChildren<Button>().Length > 0) return; 
+
+        for (int i = 0; i<_StoryScript.currentChoices.Count; i++)
+        {
+            var choice = _StoryScript.currentChoices[i];
+            var button = CreateChoiceButton(choice.text); //creates a choice button
+
+            button.onClick.AddListener(() => OnClickChoiceButton(choice));
+        }
+    }
+
+    Button CreateChoiceButton(string text)
+    {
+
+        //Instantiate Button Prefab
+        var choiceButton = Instantiate(choiceBasePrefab);
+        choiceButton.transform.SetParent(choiceHolder.transform, false);
+
+        //Change text in Button Prefab
+        var buttonText = choiceButton.GetComponentInChildren<TMP_Text>();
+        buttonText.text = text;
+
+        return choiceButton;
+    }
+
+    void OnClickChoiceButton (Choice choice)
+    {
+        _StoryScript.ChooseChoiceIndex(choice.index);
+        RefreshChoiceView();
+        DisplayNextLine();
+    }
+
+    void RefreshChoiceView()
+    {
+        if(choiceHolder != null)
+        {
+            foreach(var button in choiceHolder.GetComponentsInChildren<Button>())
+            {
+                Destroy(button.gameObject);
+            }
         }
     }
 
