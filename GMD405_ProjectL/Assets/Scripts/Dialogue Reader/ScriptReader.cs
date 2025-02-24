@@ -20,6 +20,7 @@ public class ScriptReader : MonoBehaviour
     [SerializeField]
     private Button choiceBasePrefab;
 
+    public scr_characterManager characterManager;
     void Start ()
     {
         LoadStory();

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class scr_juryManager : MonoBehaviour
 {
-    public List<scr_juror> jurors = new List<scr_juror>();
+    public List<scrobj_juror> jurors = new List<scrobj_juror>();
     int currentJuror;
 
     public TextMeshProUGUI[] GUIText;
