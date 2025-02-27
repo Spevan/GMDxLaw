@@ -44,6 +44,9 @@ public class ScriptReader : MonoBehaviour
         _StoryScript.BindExternalFunction("Name", (string charName) => ChangeName(charName));
         _StoryScript.BindExternalFunction("ChangeName", (string charName) => ChangeName(charName));
 
+        _StoryScript.BindExternalFunction("AddChar", (string charName) => AddChar(charName));
+        _StoryScript.BindExternalFunction("ChangeEmote", (string charName, string emotion) => ChangeEmote(charName, emotion));
+        _StoryScript.BindExternalFunction("RemoveChar", (string charName) => RemoveChar(charName));
     }
 
     public void DisplayNextLine()
@@ -122,4 +125,18 @@ public class ScriptReader : MonoBehaviour
 
     }
 
+    public void AddChar(string charName)
+    {
+        characterManager.AddCharacter(charName);
+    }
+
+    public void ChangeEmote(string charName, string emotion)
+    {
+        characterManager.ChangeCharacter(charName, emotion);
+    }
+
+    public void RemoveChar(string charName)
+    {
+        characterManager.RemoveCharacter(charName);
+    }
 }

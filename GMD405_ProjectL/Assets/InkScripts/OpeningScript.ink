@@ -1,4 +1,7 @@
 ﻿EXTERNAL ChangeName(charName)
+EXTERNAL AddChar(charName)
+EXTERNAL ChangeEmote(charName, emotion)
+EXTERNAL RemoveChar(charName)
 
 
 {ChangeName("")}
@@ -6,6 +9,8 @@ The sound of a door opening and closing is heard in the darkness.
 Footsteps approach the player as the room lightens up and the background is now the lobby of a courthouse.
 A man with slicked back grey hair and a bushy brown beard approaches and introduces himself.
 
+{AddChar("Whalen")}
+{ChangeEmote("Whalen", "neutral")}
 {ChangeName("GRIZZLED MAN")}
 “Good morning! I’m Mr Richards, the attorney from BB&H representing Mr. Whalen."
 
