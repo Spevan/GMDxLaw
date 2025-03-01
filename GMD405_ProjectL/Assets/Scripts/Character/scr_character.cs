@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,22 +7,17 @@ public class scr_character : MonoBehaviour
 {
     public scrobj_character characterSprites;
 
-    Image charSprite;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        charSprite = GetComponent<Image>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Image charSprite;
 
     public void ChangeSprite(string emotion)
     {
-        charSprite.sprite = (Sprite)characterSprites.GetType().GetField(emotion).GetValue(this);
+        foreach(scrobj_emotion emotions in characterSprites.emotions)
+        {
+            if(emotions.Name == emotion)
+            {
+                Debug.Log("Emotion changed to " + emotion);
+                charSprite.sprite = emotions.Emotion;
+            }
+        }
     }
 }

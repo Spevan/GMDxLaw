@@ -89,3 +89,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSprites: {fileID: 11400000, guid: 307bfdbf49ff2c34b84d16eccf362f70, type: 2}
+  charSprite: {fileID: 2928447871787802543}

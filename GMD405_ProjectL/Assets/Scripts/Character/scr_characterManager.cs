@@ -26,6 +26,7 @@ public class scr_characterManager : MonoBehaviour
             if(character.name == charName)
             {
                 Instantiate(character, new Vector2(Screen.width / 2, Screen.height / 2), Quaternion.identity, this.GetComponentInParent<Transform>());
+                CharsInScene.Add(character);
             }
         }
     }
