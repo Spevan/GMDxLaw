@@ -2,6 +2,7 @@
 EXTERNAL AddChar(charName)
 EXTERNAL ChangeEmote(charName, emotion)
 EXTERNAL RemoveChar(charName)
+EXTERNAL ChangeScene(sceneName)
 
 
 {ChangeName("")}
@@ -10,7 +11,7 @@ Footsteps approach the player as the room lightens up and the background is now 
 A man with slicked back grey hair and a bushy brown beard approaches and introduces himself.
 
 {AddChar("Whalen")}
-{ChangeEmote("Richards", "Neutral")}
+{ChangeEmote("Whalen", "Neutral")}
 {ChangeName("GRIZZLED MAN")}
 “Good morning! I’m Mr Richards, the attorney from BB&H representing Mr. Whalen."
 
@@ -43,4 +44,5 @@ A man with slicked back grey hair and a bushy brown beard approaches and introdu
 "Nice to meet you ___. Today we’re going to start you off with a simple jury selection process." 
 "We have questioned a pool of 30 jurors in order to see who matches the best qualifications for an ideal jury pool."
 "I need you to limit that group of 30 people down to just 12. It’s a simple process. Here, I will walk you through it.”
+{ChangeScene("sce_jurorSelect")}
 -> END

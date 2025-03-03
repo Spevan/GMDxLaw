@@ -2,27 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class scr_juryManager : MonoBehaviour
 {
-    public List<scrobj_juror> jurors = new List<scrobj_juror>();
-    int currentJuror;
+    public List<scrobj_juror> jurors = new List<scrobj_juror>(); //List of all jurors
+    public List<scrobj_juror> selectedJurors = new List<scrobj_juror>(); //List of selected jurors
+    public List<GameObject> JurorText = new List<GameObject>(); //List of juror text objs
+    int currentJuror; //Index of the selected juror of all jurors
 
-    public TextMeshProUGUI[] GUIText;
+    public TextMeshProUGUI[] GUIText; //List of GUI text objs to manage
+    public GameObject selectedJurorTab, selectedJurorPrefab; //selected juror obj to manage, and to create
+    public TextAsset JSONfile;
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.LoadScene("sce_gui", LoadSceneMode.Additive);
+        SceneManager.LoadScene("sce_gui", LoadSceneMode.Additive); //Load GUI scene that contains the favorability bar
+        //SceneManager.LoadScene("sce_Dialogue", LoadSceneMode.Additive); //Load GUI scene that contains the favorability bar
+        //GameObject.Find("DialogueManager").GetComponent<ScriptReader>()._inkJsonFile = JSONfile;
 
-        currentJuror = 0;
-        ChangeJuror(currentJuror);
+        currentJuror = 0; //set current juror to 0
+        ChangeJuror(currentJuror); //Change juror function
     }
 
-    public void NextJuror()
+    public void NextJuror() //Change to the next juror in the total juror list
     {
         if(currentJuror >= jurors.Count - 1)
         {
@@ -35,7 +40,7 @@ public class scr_juryManager : MonoBehaviour
         ChangeJuror(currentJuror);
     }
 
-    public void LastJuror()
+    public void LastJuror() //Change to the last juror in the total juror list
     {
         if(currentJuror <= 0)
         {
@@ -48,30 +53,44 @@ public class scr_juryManager : MonoBehaviour
         ChangeJuror(currentJuror);
     }
 
-    void ChangeJuror(int jurorNum)
+    void ChangeJuror(int jurorNum) //Take the int passed and set TXT on the main page to that index in the total juror list
     {
-        Debug.Log(jurorNum);
-        GUIText[0].text = jurors[jurorNum].name;
-        GUIText[1].text = jurors[jurorNum].birthdate;
-        GUIText[2].text = jurors[jurorNum].sex.ToString();
-        GUIText[3].text = jurors[jurorNum].address;
+        Debug.Log(jurorNum); //Output to the Console
+        GUIText[0].text = jurors[jurorNum].name; //Set 1st guiTXT obj to name
+        GUIText[1].text = jurors[jurorNum].birthdate; //Set 2nd guiTXT to bdate
+        GUIText[2].text = jurors[jurorNum].sex.ToString(); //3rd guiTXT to gender
+        GUIText[3].text = jurors[jurorNum].address; //4th guiTxT to address
 
-        GUIText[4].text = jurors[jurorNum].Answers[0].question;
-        GUIText[5].text = jurors[jurorNum].Answers[0].answer;
-        GUIText[6].text = jurors[jurorNum].Answers[1].question;
-        GUIText[7].text = jurors[jurorNum].Answers[1].answer;
+        GUIText[4].text = jurors[jurorNum].Answers[0].question; //5th guiTXT to 1st question
+        GUIText[5].text = jurors[jurorNum].Answers[0].answer; //6th guiTXT to 1st answer
+        GUIText[6].text = jurors[jurorNum].Answers[1].question; //7th guiTXT to 2nd question
+        GUIText[7].text = jurors[jurorNum].Answers[1].answer; //8th guiTXT to 2nd answer
     }
 
     public void RemoveJuror()
     {
-        int pointTotal = 0;
-        for(int i = 0; i < jurors[currentJuror].Answers.Count; i++)
+        if (selectedJurors.Count < 12)
         {
-            pointTotal += jurors[currentJuror].Answers[i].points;
-        }
+            int pointTotal = 0;
+            for (int i = 0; i < jurors[currentJuror].Answers.Count; i++)
+            {
+                pointTotal += jurors[currentJuror].Answers[i].points;
+            }
 
-        scr_guiManager.instance.ChangeFavorability(pointTotal);
-        jurors.RemoveAt(currentJuror);
-        NextJuror();
+            scr_guiManager.instance.ChangeFavorability(pointTotal);
+            CreateSelectedJuror(currentJuror);
+            jurors.RemoveAt(currentJuror);
+            NextJuror();
+        }
+    }
+
+    public void CreateSelectedJuror(int currentJuror)
+    {
+        selectedJurors.Add(jurors[currentJuror]);
+        JurorText.Add(
+            Instantiate(selectedJurorPrefab, 
+                (selectedJurorTab.transform.position + new Vector3(0, (-25 + (-25 * (selectedJurors.Count - 1))), 0)),
+                    Quaternion.identity, selectedJurorTab.transform));
+        JurorText[JurorText.Count - 1].GetComponent<scr_jurorHover>().GetJurorData(jurors[currentJuror]);
     }
 }

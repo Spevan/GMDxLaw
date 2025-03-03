@@ -3,3 +3,4 @@
 "Once you have foud a juror you think would be a good fit for our case, add them with the button on your right."
 "Be aware of the questions highlighted as any juror that has bias against our case will sway the decision against our favor."
 "I trust that your choice of jury will guide us towards victory!"
+-> END

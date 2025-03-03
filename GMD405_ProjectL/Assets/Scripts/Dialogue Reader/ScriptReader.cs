@@ -8,7 +8,7 @@ using TMPro;
 public class ScriptReader : MonoBehaviour
 {
     [SerializeField]
-    private TextAsset _inkJsonFile;
+    public TextAsset _inkJsonFile;
     private Story _StoryScript;
 
     public TMP_Text dialogueBox;
@@ -47,6 +47,8 @@ public class ScriptReader : MonoBehaviour
         _StoryScript.BindExternalFunction("AddChar", (string charName) => AddChar(charName));
         _StoryScript.BindExternalFunction("ChangeEmote", (string charName, string emotion) => ChangeEmote(charName, emotion));
         _StoryScript.BindExternalFunction("RemoveChar", (string charName) => RemoveChar(charName));
+
+        _StoryScript.BindExternalFunction("ChangeScene", (string sceneName) => ChangeScene(sceneName));
     }
 
     public void DisplayNextLine()
@@ -66,7 +68,7 @@ public class ScriptReader : MonoBehaviour
         }
         else
         {
-            dialogueBox.text = "the END"; //Displays when text is over 
+            dialogueBox.gameObject.SetActive(false); //Displays when text is over 
         }
     }
 
@@ -138,5 +140,10 @@ public class ScriptReader : MonoBehaviour
     public void RemoveChar(string charName)
     {
         characterManager.RemoveCharacter(charName);
+    }
+
+    public void ChangeScene(string sceneName)
+    {
+        scr_sceneManager.instance.ChangeScene(sceneName);
     }
 }
