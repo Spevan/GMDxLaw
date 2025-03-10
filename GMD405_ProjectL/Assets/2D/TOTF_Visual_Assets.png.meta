@@ -334,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TOTF_Visual_Assets_0: -7971400724962787219
+      TOTF_Visual_Assets_1: 3798662331263418913
+      TOTF_Visual_Assets_2: 5263688692617026523
+      TOTF_Visual_Assets_3: -4935327119397831250
+      TOTF_Visual_Assets_4: 8593548620613279720
+      TOTF_Visual_Assets_5: 5514672543646610435
+      TOTF_Visual_Assets_6: 8986286185617362619
+      TOTF_Visual_Assets_7: 2680087443260328114
+      TOTF_Visual_Assets_8: 2133389319988441862
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

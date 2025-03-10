@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ToF_Character_Conceptart_MainGuy_v001_base_Reference_0: -4142837371464758201
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
