@@ -7,12 +7,19 @@ using TMPro;
 
 public class ScriptReader : MonoBehaviour
 {
+    public static ScriptReader instance;
+    public scrobj_player playerData;
+
     [SerializeField]
     public TextAsset _inkJsonFile;
     private Story _StoryScript;
 
-    public TMP_Text dialogueBox;
+    public GameObject dialogueBox;
+    public TMP_Text dialogue;
     public TMP_Text nameTag;
+    public bool LOCKED = false;
+
+    public TMP_InputField nameInput;
 
     [SerializeField]
     private GridLayoutGroup choiceHolder;
@@ -21,7 +28,19 @@ public class ScriptReader : MonoBehaviour
     private Button choiceBasePrefab;
 
     public scr_characterManager characterManager;
-    void Start ()
+    void Awake ()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    private void Start()
     {
         LoadStory();
         DisplayNextLine();
@@ -35,10 +54,13 @@ public class ScriptReader : MonoBehaviour
         }
     }
 
+    public void SetJSON(TextAsset txtFile)
+    {
+        _inkJsonFile = txtFile;
+    }
+
     void LoadStory()
     {
-
-
         _StoryScript = new Story(_inkJsonFile.text);
 
         _StoryScript.BindExternalFunction("Name", (string charName) => ChangeName(charName));
@@ -48,27 +70,33 @@ public class ScriptReader : MonoBehaviour
         _StoryScript.BindExternalFunction("ChangeEmote", (string charName, string emotion) => ChangeEmote(charName, emotion));
         _StoryScript.BindExternalFunction("RemoveChar", (string charName) => RemoveChar(charName));
 
+        _StoryScript.BindExternalFunction("ToggleTextBox", () => ToggleTextBox());
+        _StoryScript.BindExternalFunction("ToggleNameInput", () => ToggleNameInput());
+        _StoryScript.BindExternalFunction("GetName", () => GetName());
+
         _StoryScript.BindExternalFunction("ChangeScene", (string sceneName) => ChangeScene(sceneName));
     }
 
     public void DisplayNextLine()
     {
+        if (!LOCKED)
+        {
+            if (_StoryScript.canContinue)
+            {
+                //checking if there is content to go through
+                string text = _StoryScript.Continue(); //Gets Next Line
+                text = text?.Trim(); //Removes White space from the Text
+                dialogue.text = text; //display new text
+            }
+            else if (_StoryScript.currentChoices.Count > 0)
+            {
+                DisplayChoices();
 
-        if (_StoryScript.canContinue)
-        {
-            //checking if there is content to go through
-            string text = _StoryScript.Continue(); //Gets Next Line
-            text = text?.Trim(); //Removes White space from the Text
-            dialogueBox.text = text; //display new text
-        }
-        else if (_StoryScript.currentChoices.Count > 0)
-        {
-            DisplayChoices();
-            
-        }
-        else
-        {
-            dialogueBox.gameObject.SetActive(false); //Displays when text is over 
+            }
+            else
+            {
+                dialogueBox.gameObject.SetActive(false); //Displays when text is over 
+            }
         }
     }
 
@@ -145,5 +173,45 @@ public class ScriptReader : MonoBehaviour
     public void ChangeScene(string sceneName)
     {
         scr_sceneManager.instance.ChangeScene(sceneName);
+    }
+
+    public void ToggleNameInput()
+    {
+        if(nameInput.gameObject.activeSelf)
+        {
+            nameInput.gameObject.SetActive(false);
+            LOCKED = false;
+        }
+        else
+        {
+            nameInput.gameObject.SetActive(true);
+            LOCKED = true;
+        }
+    }
+
+    public void ToggleTextBox()
+    {
+        if(dialogueBox.activeSelf)
+        {
+            dialogueBox.SetActive(false);
+            LOCKED = true;
+        }
+        else
+        {
+            dialogueBox.SetActive(true);
+            LOCKED = false;
+        }    
+    }
+
+    public void SetName()
+    {
+        playerData.Name = nameInput.text;
+        ToggleNameInput();
+        DisplayNextLine();
+    }
+
+    public string GetName()
+    {
+        return playerData.Name;
     }
 }
