@@ -8,7 +8,7 @@ using TMPro;
 public class ScriptReader : MonoBehaviour
 {
     public static ScriptReader instance;
-    public scrobj_player playerData;
+    public PlayerData playerData;
 
     [SerializeField]
     public TextAsset _inkJsonFile;
@@ -42,6 +42,8 @@ public class ScriptReader : MonoBehaviour
 
     private void Start()
     {
+        playerData = scr_dataPersistenceManager.instance.playerData;
+
         LoadStory();
         DisplayNextLine();
     }
