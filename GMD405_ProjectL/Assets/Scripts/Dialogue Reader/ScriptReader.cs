@@ -42,10 +42,9 @@ public class ScriptReader : MonoBehaviour
 
     private void Start()
     {
-        playerData = scr_dataPersistenceManager.instance.playerData;
-
         LoadStory();
         DisplayNextLine();
+        playerData = scr_dataPersistenceManager.instance.playerData;
     }
 
     void Update()
@@ -215,5 +214,11 @@ public class ScriptReader : MonoBehaviour
     public string GetName()
     {
         return playerData.Name;
+    }
+
+    public void SetLineNum()
+    {
+        int lineNum = _inkJsonFile.
+        playerData.ScriptLineNum = lineNum;
     }
 }

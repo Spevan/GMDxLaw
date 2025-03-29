@@ -26,4 +26,9 @@ public class scr_guiManager : MonoBehaviour
         FavorableNum += num;
         favorabilityBar.ChangeMarkerPos(num);
     }
+
+    public void SaveGame()
+    {
+        scr_dataPersistenceManager.instance.SaveGame();
+    }
 }

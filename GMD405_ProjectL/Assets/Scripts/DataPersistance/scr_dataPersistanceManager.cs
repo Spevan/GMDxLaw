@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class scr_dataPersistenceManager : MonoBehaviour
 {
@@ -16,11 +17,15 @@ public class scr_dataPersistenceManager : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(this.gameObject);
         if (instance == null)
         {
-            //Debug.LogError("Found more than one Data Persistence Manager in the scene.");
+            instance = this;
         }
-        instance = this;
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void Start()
@@ -55,6 +60,9 @@ public class scr_dataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
+        playerData.SceneName = SceneManager.GetActiveScene().ToString();
+        ScriptReader.instance.SetLineNum();
+
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
             dataPersistenceObj.SaveData(ref playerData);

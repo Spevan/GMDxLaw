@@ -21,4 +21,9 @@ public class scr_sceneManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void LoadGameScene()
+    {
+        SceneManager.LoadScene(scr_dataPersistenceManager.instance.playerData.SceneName);
+    }
 }
