@@ -9,22 +9,44 @@ using UnityEngine.UI;
 public class scr_juryManager : MonoBehaviour
 {
     public List<scrobj_juror> jurors = new List<scrobj_juror>(); //List of all jurors
-    public List<scrobj_juror> selectedJurors = new List<scrobj_juror>(); //List of selected jurors
+    public List<scrobj_juror> selectedJurors; //List of selected jurors
     public List<GameObject> JurorText = new List<GameObject>(); //List of juror text objs
     int currentJuror; //Index of the selected juror of all jurors
 
     public TextMeshProUGUI[] GUIText; //List of GUI text objs to manage
-    public GameObject selectedJurorTab, selectedJurorPrefab; //selected juror obj to manage, and to create
+    public GameObject selectedJurorTab, selectedJurorPrefab, confirmJuryBtn; //selected juror obj to manage, and to create
     public TextAsset JSONfile;
     // Start is called before the first frame update
     void Start()
     {
         SceneManager.LoadScene("sce_gui", LoadSceneMode.Additive); //Load GUI scene that contains the favorability bar
-        //SceneManager.LoadScene("sce_Dialogue", LoadSceneMode.Additive); //Load GUI scene that contains the favorability bar
-        //GameObject.Find("DialogueManager").GetComponent<ScriptReader>()._inkJsonFile = JSONfile;
 
         currentJuror = 0; //set current juror to 0
         ChangeJuror(currentJuror); //Change juror function
+    }
+
+    private void Update()
+    {
+        if (selectedJurors != scr_dataPersistenceManager.instance.playerData.Jurors && 
+            scr_guiManager.instance != null && scr_dataPersistenceManager.instance.playerData.Jurors != null)
+        {
+            Debug.Log("Searching saved jurors");
+            //selectedJurors = scr_dataPersistenceManager.instance.playerData.Jurors;
+
+            //int count = 0;
+            foreach (scrobj_juror savedJuror in scr_dataPersistenceManager.instance.playerData.Jurors)
+            {
+                for (int i = jurors.Count - 1; i >= 0; i--)
+                {
+                    //count++;
+                    if(savedJuror == jurors[i])
+                    {
+                        currentJuror = i;
+                        RemoveJuror(true);
+                    }
+                }
+            }
+        }
     }
 
     public void NextJuror() //Change to the next juror in the total juror list
@@ -67,20 +89,28 @@ public class scr_juryManager : MonoBehaviour
         GUIText[7].text = jurors[jurorNum].Answers[1].answer; //8th guiTXT to 2nd answer
     }
 
-    public void RemoveJuror()
+    public void RemoveJuror(bool fromSave)
     {
         if (selectedJurors.Count < 12)
         {
             int pointTotal = 0;
-            for (int i = 0; i < jurors[currentJuror].Answers.Count; i++)
+            for (int i = 0; i < jurors[currentJuror].Answers.Count - 1; i++)
             {
                 pointTotal += jurors[currentJuror].Answers[i].points;
             }
 
-            scr_guiManager.instance.ChangeFavorability(pointTotal);
+            if(!fromSave)
+            {
+                scr_guiManager.instance.ChangeFavorability(pointTotal);
+            }
             CreateSelectedJuror(currentJuror);
             jurors.RemoveAt(currentJuror);
             NextJuror();
+        }
+        
+        if (selectedJurors.Count >= 12)
+        {
+            confirmJuryBtn.SetActive(true);
         }
     }
 
@@ -92,5 +122,6 @@ public class scr_juryManager : MonoBehaviour
                 (selectedJurorTab.transform.position + new Vector3(0, (-25 + (-25 * (selectedJurors.Count - 1))), 0)),
                     Quaternion.identity, selectedJurorTab.transform));
         JurorText[JurorText.Count - 1].GetComponent<scr_jurorHover>().GetJurorData(jurors[currentJuror]);
+        scr_dataPersistenceManager.instance.playerData.Jurors = selectedJurors;
     }
 }

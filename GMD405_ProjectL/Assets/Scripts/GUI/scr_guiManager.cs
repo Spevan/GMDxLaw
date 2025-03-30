@@ -21,6 +21,15 @@ public class scr_guiManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (scr_dataPersistenceManager.instance.playerData.Favorability != FavorableNum)
+        {
+            FavorableNum = scr_dataPersistenceManager.instance.playerData.Favorability;
+            favorabilityBar.ChangeMarkerPos(FavorableNum);
+        }
+    }
+
     public void ChangeFavorability(int num)
     {
         FavorableNum += num;

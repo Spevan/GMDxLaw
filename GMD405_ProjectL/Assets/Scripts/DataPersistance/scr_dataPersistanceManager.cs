@@ -60,7 +60,7 @@ public class scr_dataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
-        playerData.SceneName = SceneManager.GetActiveScene().ToString();
+        playerData.SceneName = SceneManager.GetActiveScene().name;
         ScriptReader.instance.SetLineNum();
 
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
@@ -75,7 +75,7 @@ public class scr_dataPersistenceManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        SaveGame();
+        //SaveGame();
     }
 
     private List<IDataPersistence> FindAllDataPersistenceObjects()

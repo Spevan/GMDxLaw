@@ -7,7 +7,7 @@ public class scr_favorabilityBar : MonoBehaviour
     public GameObject favorMarker;
     public PlayerData playerData;
 
-    private void Start()
+    private void Awake()
     {
         playerData = scr_dataPersistenceManager.instance.playerData;
     }

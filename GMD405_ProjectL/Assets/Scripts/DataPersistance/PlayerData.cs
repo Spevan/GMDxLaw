@@ -7,5 +7,5 @@ public class PlayerData
     public string Name;
     public int Favorability, ScriptLineNum;
     public string SceneName;
-    public List<string> SceneNames;
+    public List<scrobj_juror> Jurors;
 }

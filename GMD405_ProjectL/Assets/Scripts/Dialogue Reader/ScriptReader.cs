@@ -218,7 +218,7 @@ public class ScriptReader : MonoBehaviour
 
     public void SetLineNum()
     {
-        int lineNum = _inkJsonFile.
+        int lineNum = _StoryScript.currentText.Length;
         playerData.ScriptLineNum = lineNum;
     }
 }
