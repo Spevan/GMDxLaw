@@ -119,7 +119,7 @@ public class scr_juryManager : MonoBehaviour
         selectedJurors.Add(jurors[currentJuror]);
         JurorText.Add(
             Instantiate(selectedJurorPrefab, 
-                (selectedJurorTab.transform.position + new Vector3(0, (-25 + (-25 * (selectedJurors.Count - 1))), 0)),
+                (selectedJurorTab.transform.position + new Vector3(0, (-25 + (-25 * (selectedJurors.Count)) * selectedJurorTab.transform.parent.GetComponent<Canvas>().scaleFactor), 0)),
                     Quaternion.identity, selectedJurorTab.transform));
         JurorText[JurorText.Count - 1].GetComponent<scr_jurorHover>().GetJurorData(jurors[currentJuror]);
         scr_dataPersistenceManager.instance.playerData.Jurors = selectedJurors;

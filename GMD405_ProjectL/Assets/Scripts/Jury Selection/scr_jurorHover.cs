@@ -30,7 +30,7 @@ public class scr_jurorHover : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("Mini Juror Stats showing");
-        MiniGUI = Instantiate(MiniGUIprefab, this.transform);
+        MiniGUI = Instantiate(MiniGUIprefab, this.transform.parent);
         GUItext = MiniGUI.GetComponentsInChildren<TextMeshProUGUI>();
         mouse_over = true;
     }
@@ -67,14 +67,14 @@ public class scr_jurorHover : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             GUItext[6].color = Color.red;
         }
 
-
+        float SF = this.transform.parent.parent.GetComponent<Canvas>().scaleFactor;
         if (Input.mousePosition.y > 150)
         {
-            MiniGUI.transform.position = Input.mousePosition + new Vector3(75, -75, -75);
+            MiniGUI.transform.position = Input.mousePosition + new Vector3(75 * SF, -75 * SF , -75 * SF);
         }
         else
         {
-            MiniGUI.transform.position = Input.mousePosition + new Vector3(75, 75, -75);
+            MiniGUI.transform.position = Input.mousePosition + new Vector3(75 * SF, 75 * SF, -75 * SF);
         }
     }
 

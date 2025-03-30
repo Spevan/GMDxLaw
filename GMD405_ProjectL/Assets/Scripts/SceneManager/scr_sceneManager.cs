@@ -6,7 +6,7 @@ public class scr_sceneManager : MonoBehaviour
     public static scr_sceneManager instance { get; private set; }
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
         if (instance == null)
         {
             instance = this;
@@ -24,6 +24,13 @@ public class scr_sceneManager : MonoBehaviour
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene(scr_dataPersistenceManager.instance.playerData.SceneName);
+        if (scr_dataPersistenceManager.instance.playerData.SceneName != null)
+        {
+            SceneManager.LoadScene(scr_dataPersistenceManager.instance.playerData.SceneName);
+        }
+        else
+        {
+            ChangeScene("sce_dialogue");
+        }
     }
 }

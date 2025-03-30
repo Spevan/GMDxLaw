@@ -8,6 +8,7 @@ public class scr_guiLoader : MonoBehaviour
     private void Awake()
     {
         SceneManager.LoadScene("sce_Dialogue", LoadSceneMode.Additive);
+        SceneManager.LoadScene("sce_gui", LoadSceneMode.Additive);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
