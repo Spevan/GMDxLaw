@@ -19,7 +19,7 @@ public class scr_juryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.LoadScene("sce_gui", LoadSceneMode.Additive); //Load GUI scene that contains the favorability bar
+        //SceneManager.LoadScene("sce_gui", LoadSceneMode.Additive); //Load GUI scene that contains the favorability bar
 
         currentJuror = 0; //set current juror to 0
         ChangeJuror(currentJuror); //Change juror function

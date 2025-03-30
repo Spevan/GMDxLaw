@@ -71,9 +71,10 @@ public class ScriptReader : MonoBehaviour
         _StoryScript.BindExternalFunction("ChangeEmote", (string charName, string emotion) => ChangeEmote(charName, emotion));
         _StoryScript.BindExternalFunction("RemoveChar", (string charName) => RemoveChar(charName));
 
-        _StoryScript.BindExternalFunction("ToggleTextBox", () => ToggleTextBox());
+        _StoryScript.BindExternalFunction("ToggleTextBox", (bool lockTB) => ToggleTextBox(lockTB));
         _StoryScript.BindExternalFunction("ToggleNameInput", () => ToggleNameInput());
         _StoryScript.BindExternalFunction("GetName", () => GetName());
+        _StoryScript.BindExternalFunction("ChangeFavorability", (int num) => ChangeFavorability(num));
 
         _StoryScript.BindExternalFunction("ChangeScene", (string sceneName) => ChangeScene(sceneName));
     }
@@ -88,11 +89,10 @@ public class ScriptReader : MonoBehaviour
                 string text = _StoryScript.Continue(); //Gets Next Line
                 text = text?.Trim(); //Removes White space from the Text
                 dialogue.text = text; //display new text
-            }
-            else if (_StoryScript.currentChoices.Count > 0)
-            {
-                DisplayChoices();
-
+                if (_StoryScript.currentChoices.Count > 0)
+                {
+                    DisplayChoices();
+                }
             }
             else
             {
@@ -133,6 +133,7 @@ public class ScriptReader : MonoBehaviour
     {
         _StoryScript.ChooseChoiceIndex(choice.index);
         RefreshChoiceView();
+        DisplayNextLine();
         DisplayNextLine();
     }
 
@@ -190,12 +191,19 @@ public class ScriptReader : MonoBehaviour
         }
     }
 
-    public void ToggleTextBox()
+    public void ToggleTextBox(bool lockTB)
     {
         if(dialogueBox.activeSelf)
         {
             dialogueBox.SetActive(false);
-            LOCKED = true;
+            if (lockTB)
+            {
+                LOCKED = true;
+            }
+            else
+            {
+                LOCKED = false; 
+            }
         }
         else
         {
@@ -220,5 +228,10 @@ public class ScriptReader : MonoBehaviour
     {
         int lineNum = _StoryScript.currentText.Length;
         playerData.ScriptLineNum = lineNum;
+    }
+
+    public void ChangeFavorability(int num)
+    {
+        scr_guiManager.instance.ChangeFavorability(num);
     }
 }
