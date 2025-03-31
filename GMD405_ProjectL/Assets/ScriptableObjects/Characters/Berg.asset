@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cf8034e8d3e765468eb5220bcc559f2, type: 3}
-  m_Name: WhalenNeutral
+  m_Script: {fileID: 11500000, guid: d689198573b0ae5448d5db4501240eac, type: 3}
+  m_Name: Berg
   m_EditorClassIdentifier: 
-  Name: Neutral
-  Emotion: {fileID: 3459663121729055322, guid: 10d904de3655f4a4bb57f6f688b96380, type: 3}
+  emotions:
+  - {fileID: 11400000, guid: b1be77241c3751f4fb6fa068708a49e2, type: 2}

@@ -10,6 +10,7 @@ public class scr_musicManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log(this.name + " loaded");
         if(instance == null)
         {
             instance = this;

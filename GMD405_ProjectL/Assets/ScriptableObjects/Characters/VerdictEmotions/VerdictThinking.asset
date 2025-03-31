@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cf8034e8d3e765468eb5220bcc559f2, type: 3}
-  m_Name: WhalenNeutral
+  m_Name: VerdictThinking
   m_EditorClassIdentifier: 
-  Name: Neutral
-  Emotion: {fileID: 3459663121729055322, guid: 10d904de3655f4a4bb57f6f688b96380, type: 3}
+  Name: Thinking
+  Emotion: {fileID: 562861223778794759, guid: a63af218954d24346979f4302b06b8f2, type: 3}

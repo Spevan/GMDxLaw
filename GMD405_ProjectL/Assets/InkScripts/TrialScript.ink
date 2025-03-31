@@ -1,11 +1,12 @@
 ﻿EXTERNAL ChangeName(charName)
-EXTERNAL AddChar(charName)
+EXTERNAL AddChar(charName, emotion)
 EXTERNAL ChangeEmote(charName, emotion)
 EXTERNAL RemoveChar(charName)
 EXTERNAL GetName()
 EXTERNAL ChangeFavorability(num)
 EXTERNAL ToggleTextBox(lockTB)
 
+{AddChar("Verdict", "Neutral")}
 {ChangeName("")}
 (The BAILIFF enters the courtroom. Everyone goes silent and stands.)
 
@@ -22,7 +23,7 @@ EXTERNAL ToggleTextBox(lockTB)
 "Y-yes, Your Honor."
 
 {ChangeName("Mr. Richards")}
-{AddChar("RICHARDS")}
+{AddChar("Richards", "Neutral")}
 (Richards leans over to whisper.) "Don’t be intimidated by the judge or Berg… We got this."
 
 {ChangeName("JUDGE")}
@@ -47,33 +48,30 @@ Which type of lawsuit would this case fall under?
 
 {ToggleTextBox(false)}
 +“The lawsuit which we shall be involved in today is a product liability action.”
-{ChangeName("{GetName()}")}
 ->ProductLiability
 +“The lawsuit which we shall be involved in today is a personal injury action.”
 +“The lawsuit which we shall be involved in today is a negligence action.”
-{ChangeName("{GetName()}")}
 ->PersonalInjuryOrNegligence
 
 === PersonalInjuryOrNegligence ===
-{ToggleTextBox(true)}
 {ChangeFavorability(1)}
+{ToggleTextBox(true)}
 {ChangeName("Mr. Richards")}
 “While that is technically correct, the specific suit we are here to present is for product liability."
 ->CivilOrCriminal
 
 === ProductLiability ===
 {ChangeFavorability(3)}
+{ToggleTextBox(true)}
 ->CivilOrCriminal 
 
 === CivilOrCriminal ===
 {ChangeName("")}
 Is this a civil or criminal case?
-{ToggleTextBox(false)}
+{ToggleTextBox(true)}
 +“This is a criminal matter that should be taken seriously.”
-{ChangeName("{GetName()}")}
 ->Criminal
 +“This is a civil case, not a criminal one. Keep that in mind as we continue.”
-{ChangeName("{GetName()}")}
 ->Civil
 
 === Criminal ===

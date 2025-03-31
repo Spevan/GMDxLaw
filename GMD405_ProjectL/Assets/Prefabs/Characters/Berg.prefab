@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2928447871787802543}
   - component: {fileID: 2550170845677041513}
   m_Layer: 5
-  m_Name: Whalen
+  m_Name: Berg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 6760736558989778436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.37056, y: 0.37056, z: 0.37056}
+  m_LocalScale: {x: 0.35418496, y: 0.35418496, z: 0.35418496}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,9 +66,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4142837371464758201, guid: 64914c9695d1f64449589b08b79eb1ef, type: 3}
+  m_Sprite: {fileID: 4441045692078799528, guid: 29ce376af8b4994439fd4e01d470343a, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -88,5 +88,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f9533a8a3c07f49b45dc1bfd4a2fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSprites: {fileID: 11400000, guid: 307bfdbf49ff2c34b84d16eccf362f70, type: 2}
+  characterSprites: {fileID: 11400000, guid: df084aa4a1f33a14c85fa5d3a2de4efd, type: 2}
   charSprite: {fileID: 2928447871787802543}

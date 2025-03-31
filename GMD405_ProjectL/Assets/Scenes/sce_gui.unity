@@ -1632,6 +1632,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   favorMarker: {fileID: 465374977}
+  clipList:
+  - {fileID: 8300000, guid: 27fc011a853909343b6fa9cf5db5cc9f, type: 3}
+  - {fileID: 8300000, guid: ecbada5c0573c794f86238379b7b59c6, type: 3}
+  - {fileID: 8300000, guid: 7c1771ce5efe1674288ceeadc5d00196, type: 3}
 --- !u!1 &1859649577
 GameObject:
   m_ObjectHideFlags: 0

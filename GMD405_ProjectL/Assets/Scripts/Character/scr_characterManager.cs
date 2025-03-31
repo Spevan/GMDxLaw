@@ -1,11 +1,11 @@
 using Ink.Parsed;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class scr_characterManager : MonoBehaviour
 {
-    public List<GameObject> Characters;
-    public List<GameObject> CharsInScene;
+    public List<GameObject> Characters, CharsInScene, CharSpawns;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,14 +19,37 @@ public class scr_characterManager : MonoBehaviour
         
     }
 
-    public void AddCharacter(string charName)
+    public void AddCharacter(string charName, string emotion)
     {
         foreach(var character in Characters)
         {
-            if(character.name == charName)
+            if (character.name == charName)
             {
-                Instantiate(character, new Vector2(Screen.width / 2, Screen.height / 2), Quaternion.identity, this.GetComponentInParent<Transform>());
-                CharsInScene.Add(character);
+                switch (CharsInScene.Count)
+                {
+                    case 0:
+                    {
+                        CharsInScene.Add(
+                            Instantiate(character, CharSpawns[0].transform.position,
+                                Quaternion.identity, this.GetComponentInParent<Transform>()));
+                        break;
+                    }
+                    case 1:
+                    {
+                        CharsInScene.Add(
+                            Instantiate(character, CharSpawns[2].transform.position,
+                            Quaternion.identity, this.GetComponentInParent<Transform>()));
+                        break;
+                    }
+                    case 2:
+                    {
+                        CharsInScene.Add(
+                            Instantiate(character, CharSpawns[1].transform.position,
+                            Quaternion.identity, this.GetComponentInParent<Transform>()));
+                        break;
+                    }
+                }
+                ChangeCharacter(charName, emotion);
             }
         }
     }
@@ -35,7 +58,7 @@ public class scr_characterManager : MonoBehaviour
     {
         foreach(var character in CharsInScene)
         {
-            if(character.name == charName)
+            if(character.name == charName + "(Clone)")
             {
                 character.GetComponent<scr_character>().ChangeSprite(emotion);
 

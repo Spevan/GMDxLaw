@@ -21,8 +21,8 @@ EditorBuildSettings:
     path: Assets/Scenes/sce_test.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/sce_court.unity
-    guid: 12e608b19cb1e904b82ad02978312685
+    path: Assets/Scenes/sce_introduction.unity
+    guid: 33d83ffe13467dd4890fb14bfab0901b
   - enabled: 1
     path: Assets/Scenes/sce_courtroom.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab

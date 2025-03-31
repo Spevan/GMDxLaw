@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2928447871787802543}
   - component: {fileID: 2550170845677041513}
   m_Layer: 5
-  m_Name: Whalen
+  m_Name: Verdict
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 6760736558989778436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.37056, y: 0.37056, z: 0.37056}
+  m_LocalScale: {x: 0.21332768, y: 0.21332768, z: 0.21332768}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -65}
-  m_SizeDelta: {x: 771, y: 883}
+  m_SizeDelta: {x: 562, y: 1460}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &880830152017054950
 CanvasRenderer:
@@ -66,9 +66,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4142837371464758201, guid: 64914c9695d1f64449589b08b79eb1ef, type: 3}
+  m_Sprite: {fileID: -6703509690870642335, guid: 104b98c2782197b4eb7e28bbd4ec77ee, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -88,5 +88,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f9533a8a3c07f49b45dc1bfd4a2fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSprites: {fileID: 11400000, guid: 307bfdbf49ff2c34b84d16eccf362f70, type: 2}
+  characterSprites: {fileID: 11400000, guid: c9bd00c5de52d0c4fbefe4b0011ec7cb, type: 2}
   charSprite: {fileID: 2928447871787802543}
