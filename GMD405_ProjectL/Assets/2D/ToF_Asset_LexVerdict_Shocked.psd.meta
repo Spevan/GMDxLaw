@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ToF_Asset_LexVerdict_Shocked_0: -2438197544125437455
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
