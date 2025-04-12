@@ -168,8 +168,11 @@ Is this a civil or criminal case?
 
 {ChangeName("WHALEN")}
 “That’s correct.”
+->Choices1
 
+=== Choices1 ===
 {ToggleTextBox(false)}
+{ChangeName("")}
 +“Where on your face were you struck?”
 ->Struck
 +"Mr. Whalen, can you describe what happened on the day of the injury?"
@@ -179,8 +182,11 @@ Is this a civil or criminal case?
 {ToggleTextBox(false)}
 {ChangeName("WHALEN")}
 “As you can see from my face, it struck me hard on the left side from above the eye all the way down to my jaw.”
+->Choices2
 
+=== Choices2 ===
 {ToggleTextBox(false)}
+{ChangeName("")}
 +“What problems do you have presently that relate to your injury thus far?”
 ->Problems
 +“Are you under any restrictions presently with your doctors because of your condition?”
@@ -188,5 +194,188 @@ Is this a civil or criminal case?
 +“You said you detect an increase in the sensation of feeling returning to your face, yes?” //Appears after the first question has been answered.
 ->Feeling
 
+=== Problems ===
+{ToggleTextBox(false)}
+{ChangeName("WHALEN")}
+“I’ve still got numbness in parts of my face where I can’t feel anything. I saw a neurologist last week as I’m still having severe headaches, dizziness and nausea from it."
+"Sleeping is difficult, some nights I wake up screaming.”
+
+{ToggleTextBox(false)}
+{ChangeName("")}
++“You wake up screaming? What from?”
+->Screaming
++“Where are you numb?”
+->Numb
+
+=== Screaming ===
+{ToggleTextBox(false)}
+{ChangeName("WHALEN")}
+“I don’t know. The pain, maybe.”
+->Choices2
+
+=== Numb ===
+{ToggleTextBox(false)}
+{ChangeName("WHALEN")}
+“I have some feeling back in my temples and cheekbones. The numbness is mostly in my upper lip and over my cheek down to my jaw."
+
+{ChangeName("{GetName()}")}
+“Have the doctors indicated whether that is a condition that will improve?”
+
+{ChangeName("WHALEN")}
+“Doctor Goodwill told me he wouldn’t know more about the state of it until six months to a year if I was going to get any feeling back."
+"It’s a healing process and once it’s all over I may get some feeling back. I may not get any back at all.”
+->Choices2
+
+=== Restrictions ===
+{ToggleTextBox(false)}
+{ChangeName("WHALEN")}
+“Yes, I am.”
+
+{ChangeName("{GetName()}")}
+“What are they?”
+
+{ChangeName("WHALEN")}
+“I cannot perform my duties as a police officer as far as getting involved in any confrontations with anybody."
+"Right now I am assigned to telecommunications, stuck answering phones all day.”
+->Choices3
+
+=== Choices3 ===
+{ToggleTextBox(false)}
+{ChangeName("")}
++“Are you getting paid the same as you would?”
+->Paid
++“Any other type of work you can do at the troop other than phone work?”
+->Phone
++“How much time did you miss from work following the accident?”
+->Accident
+
+=== Paid ===
+{ToggleTextBox(false)}
+{ChangeName("WHALEN")}
+“I’m still getting paid but definitely not as much as before.”
+->Choices3
+
+=== Phone ===
+{ToggleTextBox(false)}
+{ChangeName("WHALEN")}
+“No, sir. They won’t let me leave the building in uniform.”
+
+{ChangeName("{GetName()}")}
+“Why is that?”
+
+{ChangeName("WHALEN")}
+“They won’t let me take any kind of position where I have to take physical action or anything. It’s a restriction that has left me doing work that I dislike very much.”
+->Choices3
+
+=== Accident ===
+{ToggleTextBox(false)}
+{ChangeName("WHALEN")}
+“I believe I took about – somewhere in the neighborhood of fifty sick days.”
+
+{ChangeName("{GetName()}")}
+“Have you returned to work full-time since that time?”
+
+{ChangeName("WHALEN")}
+“Yes, but only with light capacity. I am not permitted to wear a uniform outside of the building. It makes it so I am unable to perform extra duty work.”
+
+{ChangeName("{GetName()}")}
+“How much do you think you were making yearly in the way of extra duty work?”
+
+{ChangeName("WHALEN")}
+“I would say somewhere between three and four thousand.”
+->Choices2
+
+=== Feeling ===
+{ToggleTextBox(false)}
+{ChangeName("WHALEN")}
+“I have more pain there now than I have had since the operation. I assume that’s because feeling is returning in that particular area."
+"My whole face was numb at one point, but I’m getting some feeling back.”
+
+{ChangeName("{GetName()}")}
+“What was the operation? What did you have done?”
+
+{ChangeName("WHALEN")}
+“Multiple facial fractures, jaw, cheekbone, eyebone, total concussion.”
+->Choices1
+
 === Injury ===
+{ToggleTextBox(false)}
+{ChangeName("WHALEN")}
+“Okay, the team I was playing for was up to bat and I was in what is considered the dugout area. I was coming out of there, getting my own bat."
+"There was a man in the on-deck circle who would bat next. I was prepared to take his place next."
+"As I was picking up my bat, out of nowhere I was hit with this weight and went down hard.”
+
+{ChangeName("")}
+{ToggleTextBox(false)}
++“Have you had the occasion to talk to the guy who was swinging the bat since this happened?”
+->Guy
++“How far from the end of the bat would the weight go until it reached a point where it could no longer move?”
+->Weight
++“What kind of bat was he using? Was it a commonly-used softball bat?”
+->SoftballBat
+
+=== Guy ===
+{ToggleTextBox(false)}
+{ChangeName("WHALEN")}
+“Yes, I have. He told me that when he swung it, he could see it fly off as if he was shooting a rifle. He saw it strike me in the face.”
+
+{ChangeName("{GetName()}")}
+“We actually have the weight itself here if the jury would like to see it.”
+
+{ChangeName("WHALEN")}
+“The weight is a piece of lead with a plastic coating surrounding it."
+"It appears that the inner circumference of that plastic ripped on the inside from the force of the man swinging, causing it to peel off.”
+
+“In my opinion, one swing had enough force behind it to cause that thing to tear off the bat.”
+->Closing
+
+=== Weight ===
+{ToggleTextBox(false)}
+{ChangeName("WHALEN")}
+“It slides down the short end of the bat and goes about halfway down.”
+
+{ChangeName("{GetName()}")}
+“And as I understand it, when its casing has been removed, the inner core will slide completely over the bat; is that right?”
+
+{ChangeName("WHALEN")}
+“I would assume so.”
+
+{ChangeName("{GetName()}")}
+“Have you ever tried that?” Will it slide completely over the bat?”
+
+{ChangeName("WHALEN")}
+“I have had no occasion since this accident to try it but I assume that is the case, yes.”
+->Closing
+
+=== SoftballBat ===
+{ToggleTextBox(false)}
+{ChangeName("WHALEN")}
+“He uses the same bat I use. It’s a very popular model.”
+
+{ChangeName("{GetName()}")}
+“Is it metal?”
+
+{ChangeName("WHALEN")}
+“It’s an aluminum bat.”
+->CrossExam
+
+=== CrossExam ===
+{ToggleTextBox(false)}
+{ChangeName("{GetName()}")}
+“Thank you for your time and cooperation, Mr. Whalen. Prosecution rests.”
+
+{ChangeName("BERG")}
+“Mr. Whalen, you talked about not being able to wear the uniform outside of the RECOM building.”
+
+{ChangeName("WHALEN")}
+“That’s correct, sir.”
+
+{ChangeName("BERG")}
+“Can you explain the significance of not being able to wear a uniform?”
+
+{ChangeName("WHALEN")}
+“I’m a policeman. As part of wearing that uniform, it’s my job to preserve the law and any of its forms."
+"For example, if I was in uniform and somebody got in a fight right now, I am bound to take some kind of action, whatever necessary."
+"They will not allow me to be put into a position where I could further injure my face.”
+
 ->END
