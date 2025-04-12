@@ -9,6 +9,7 @@ public class ScriptReader : MonoBehaviour
 {
     public static ScriptReader instance;
     public PlayerData playerData;
+    public scr_scriptManager scriptManager;
 
     [SerializeField]
     public TextAsset _inkJsonFile;
@@ -60,12 +61,18 @@ public class ScriptReader : MonoBehaviour
         _inkJsonFile = txtFile;
     }
 
+    public void SetScript(string scriptName)
+    {
+        _inkJsonFile = scriptManager.SetScript(scriptName);
+    }
+
     void LoadStory()
     {
         _StoryScript = new Story(_inkJsonFile.text);
 
         _StoryScript.BindExternalFunction("Name", (string charName) => ChangeName(charName));
         _StoryScript.BindExternalFunction("ChangeName", (string charName) => ChangeName(charName));
+        _StoryScript.BindExternalFunction("SetScript", (string  stringName) => ChangeName(stringName));
 
         _StoryScript.BindExternalFunction("AddChar", (string charName, string emotion) => AddChar(charName, emotion));
         _StoryScript.BindExternalFunction("ChangeEmote", (string charName, string emotion) => ChangeEmote(charName, emotion));

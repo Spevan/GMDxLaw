@@ -15,7 +15,7 @@ public class scr_character : MonoBehaviour
         {
             if(emotions.Name == emotion)
             {
-                Debug.Log("Emotion changed to " + emotion);
+                Debug.Log(name + "'s emotion changed to " + emotion);
                 charSprite.sprite = emotions.Emotion;
             }
         }

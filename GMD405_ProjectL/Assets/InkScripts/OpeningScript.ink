@@ -31,6 +31,7 @@ A man with slicked back grey hair and a bushy brown beard approaches and introdu
 -> Name
 
 === NotMe ===
+{ChangeEmote("Verdict", "Neutral")}
 {ChangeName("Mr. Richards")}
 {ChangeEmote("Richards", "Embarrassed")}
 "Oh! My apologies, you seemed so professional I- wait a minute..."
