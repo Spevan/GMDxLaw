@@ -70,7 +70,7 @@ public class scr_characterManager : MonoBehaviour
     {
         foreach(var character in CharsInScene)
         {
-            if(character.name == charName)
+            if((character.name + "(Clone)") == charName)
             {
                 Destroy(character);
             }

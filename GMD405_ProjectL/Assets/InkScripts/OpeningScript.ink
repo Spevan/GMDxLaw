@@ -5,6 +5,7 @@ EXTERNAL RemoveChar(charName)
 EXTERNAL ChangeScene(sceneName)
 EXTERNAL ToggleNameInput()
 EXTERNAL GetName()
+EXTERNAL ToggleTextBox(lockTB)
 
 {AddChar("Verdict", "Neutral")}
 {ChangeName("")}
@@ -18,12 +19,14 @@ A man with slicked back grey hair and a bushy brown beard approaches and introdu
 {ChangeName("Mr. Richards")}
 "I am here to meet my understudy for the trial today. Might that be you?”
 
+{ToggleTextBox(false)}
 {ChangeEmote("Verdict", "Thinking")}
 {ChangeName("Me")}
 * *"Yes, that's me." -> ThatsMe
 * *"Nope, not me" -> NotMe
 
 === ThatsMe ===
+{ToggleTextBox(false)}
 {ChangeEmote("Verdict", "Neutral")}
 {ChangeName("Mr. Richards")}
 {ChangeEmote("Richards", "Happy")}
@@ -31,6 +34,7 @@ A man with slicked back grey hair and a bushy brown beard approaches and introdu
 -> Name
 
 === NotMe ===
+{ToggleTextBox(false)}
 {ChangeEmote("Verdict", "Neutral")}
 {ChangeName("Mr. Richards")}
 {ChangeEmote("Richards", "Embarrassed")}
