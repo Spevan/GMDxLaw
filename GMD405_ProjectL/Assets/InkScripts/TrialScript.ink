@@ -16,6 +16,7 @@ EXTERNAL ToggleTextBox(lockTB)
 {ChangeName("")}
 (The judge enters. Bangs the gavel. Everyone sits.)
 
+{AddChar("Judge", "Neutral")}
 {ChangeName("JUDGE")}
 "Court is now in session. We are here for the case of CJ Whalen vs. On-Deck, Inc. Prosecution, are you ready?"
 
@@ -25,18 +26,20 @@ EXTERNAL ToggleTextBox(lockTB)
 {ChangeName("Mr. Richards")}
 {AddChar("Richards", "Neutral")}
 (Richards leans over to whisper.) "Don’t be intimidated by the judge or Berg… We got this."
+{RemoveChar("Richards")}
 
 {ChangeName("JUDGE")}
 "And is the defense ready?"
 
 {ChangeName("Mr. Berg")}
-{AddChar("BERG", "neutral")}
+{AddChar("Berg", "Neutral")}
 "Why, of course, Your Honor. Though I must say, I question the necessity of this trial."
 "My client, On-Deck, Inc., is a reputable company! The prosecution will need more than a sob story to prove liability."
+{RemoveChar("Berg")}
 
-{RemoveChar("BERG")}
 {ChangeName("JUDGE")}
 “Mr. Berg, please save your comments for the opening statement. Prosecution, you may proceed with your opening statement.”
+{RemoveChar("Judge")}
 
 {ChangeName("{GetName()}")}
 "Good morning, ladies and gentlemen of the jury. My name is {GetName()} and I am from the law firm BB&H."
@@ -44,11 +47,11 @@ EXTERNAL ToggleTextBox(lockTB)
 "Mr. Whalen brought the suit because he was injured by a product."
 "It is his position that the product was defective, and that he was injured as a direct result of that defect."
 
+{ChangeEmote("Verdict", "Thinking")}
 {ChangeName("")}
 Which type of lawsuit would this case fall under?
 
 {ToggleTextBox(false)}
-{ChangeEmote("Verdict", "Thinking")}
 +“The lawsuit which we shall be involved in today is a product liability action.”
 ->ProductLiability
 +“The lawsuit which we shall be involved in today is a personal injury action.”
@@ -64,8 +67,10 @@ Which type of lawsuit would this case fall under?
 {ChangeName("{GetName()}")}
 “The lawsuit which we shall be involved in today is a personal injury action.”
 
+{AddChar("Richards", "Neutral")}
 {ChangeName("Mr. Richards")}
 “While that is technically correct, the specific suit we are here to present is for product liability."
+{RemoveChar("Richards")}
 ->CivilOrCriminal
 
 
@@ -76,8 +81,10 @@ Which type of lawsuit would this case fall under?
 {ChangeName("{GetName()}")}
 “The lawsuit which we shall be involved in today is a negligence action.”
 
+{AddChar("Richards", "Neutral")}
 {ChangeName("Mr. Richards")}
 “While that is technically correct, the specific suit we are here to present is for product liability."
+{RemoveChar("Richards")}
 ->CivilOrCriminal
 
 
@@ -91,10 +98,10 @@ Which type of lawsuit would this case fall under?
 
 
 === CivilOrCriminal ===
+{ChangeEmote("Verdict", "Thinking")}
 {ChangeName("")}
 Is this a civil or criminal case?
 {ToggleTextBox(false)}
-{ChangeEmote("Verdict", "Thinking")}
 +“This is a criminal matter that should be taken seriously.”
 ->Criminal
 +“This is a civil case, not a criminal one. Keep that in mind as we continue.”
@@ -108,8 +115,10 @@ Is this a civil or criminal case?
 {ChangeName("{GetName()}")}
 “This is a criminal matter that should be taken seriously.”
 
+{AddChar("Judge", "Neutral")}
 {ChangeName("JUDGE")}
-"___, this is not a criminal case. The government has not pressed any charges against the defense. Please, keep this in mind as you continue.”
+"{GetName()}, this is not a criminal case. The government has not pressed any charges against the defense. Please, keep this in mind as you continue.”
+{RemoveChar("Judge")}
 
 {ChangeName("{GetName()}")}
 “Y-yes, your honor.”
@@ -126,6 +135,7 @@ Is this a civil or criminal case?
 
 
 === BatWeight ===
+{AddChar("Richards", "Neutral")}
 {ChangeName("RICHARDS")}
 “The product with which we are concerned today is called a bat-weight."
 "The purpose is to increase the power of the batter’s swing so that the ball will go further when struck with said bat."
@@ -136,10 +146,10 @@ Is this a civil or criminal case?
 "This should have been the case on the afternoon of May 20, 1980. However, on that day, what took place instead would affect Mr. Whalen for the rest of his life."
 "Moments before the incident, the weight was secured as it always had been.”
 
+{ChangeEmote("Verdict", "Thinking")}
 {ChangeName("")}
 "What should I say next?"
 {ToggleTextBox(false)}
-{ChangeEmote("Verdict", "Thinking")}
 +“Instead of sitting snug on the bat, the weight came loose and smacked Mr. Whalen in the face.”
 ->Smack
 +“Suddenly, during practice swings, the weight flew off like a guided missile and injured Mr. Whalen severely.”
@@ -163,6 +173,7 @@ Is this a civil or criminal case?
 {ChangeEmote("Verdict", "Shocked")}
 {ChangeName("{GetName()}")}
 “Suddenly, during routine on-deck practice swings, the weight flew off like a guided missile and struck Mr. Whalen, injuring him severely.”
+{ChangeEmote("Verdict", "Neutral")}
 ->FinalThoughts
 
 
@@ -190,9 +201,12 @@ Is this a civil or criminal case?
 {RemoveChar("Richards")}
 {RemoveChar("Verdict")}
 
+{AddChar("Judge", "Neutral")}
 {ChangeName("JUDGE")}
 “Thank you prosecution, you may rest. Defense, please proceed with your opening statement.”
+{RemoveChar("Judge")}
 
+{AddChar("Berg", "Neutral")}
 {ChangeName("BERG")}
 "Ladies and gentlemen of the jury, I come today not to represent just On-Deck Inc. but Mr. Miranda himself, the maker of these weights."
 "Mr. Miranda grew up in New York, not far from here, where he would frequent the local ball games all his life."
@@ -212,13 +226,17 @@ Is this a civil or criminal case?
 "Clearly either the retailer did not warn Mr. Whalen and his team of the necessary safety precautions or Mr. Whalen and his team were completely ignorant to them."
 "Either way, the idea that On-Deck Inc. or Mr. Miranda could be responsible for this one-in-a-million type of incident is ridiculous."
 "I am sure that the jury today will listen to the evidence and rule in fairness, as it is your sworn duty to do so. Thank you for your time."
+{RemoveChar("Berg")}
 
+{AddChar("Judge", "Neutral")}
 {ChangeName("JUDGE")}
 "(Judge nods, turning to the prosecution.) Very well. Prosecution, call your first witness."
+{RemoveChar("Judge")}
 
+{AddChar("Verdict", "Neutral")}
 {ChangeName("{GetName()}")}
 “Prosecution calls CJ Whalen to the stand.”
-(CJ enters, his face still swollen from the injury.)
+{AddChar("Whalen", "Neutral")}
 "State your name and occupation."
 
 {ChangeName("WHALEN")}
@@ -233,6 +251,7 @@ Is this a civil or criminal case?
 
 
 === Choices1 ===
+{ChangeEmote("Verdict", "Thinking")}
 {ToggleTextBox(false)}
 {ChangeName("")}
 +“Where on your face were you struck?”
@@ -488,10 +507,11 @@ Is this a civil or criminal case?
 
 
 === CrossExam ===
-{ToggleTextBox(false)}
 {ChangeName("{GetName()}")}
 “Thank you for your time and cooperation, Mr. Whalen. Prosecution rests.”
+{RemoveChar("Verdict")}
 
+{AddChar("Berg", "Neutral")}
 {ChangeName("BERG")}
 “Mr. Whalen, you talked about not being able to wear the uniform outside of the RECOM building.”
 
@@ -538,11 +558,15 @@ Is this a civil or criminal case?
 {ChangeName("WHALEN")}
 “I’d say everyone on the team. I believe we all use aluminum bats. This particular bat is probably one of the most popular models.”
 
+{AddChar("Verdict", "Shocked")}
 {ChangeName("{GetName()}")}
 “Objection! All softball teams use aluminum bats, this case is not significant in that regard.” //Timed event
+{RemoveChar("Verdict")}
 
+{AddChar("Judge", "Neutral")}
 {ChangeName("JUDGE")}
 “Sustained.”
+{RemoveChar("Judge")}
 
 {ChangeName("BERG")}
 “Mr. Whalen, everyone on the team was using the same weight, correct?”
@@ -555,7 +579,7 @@ Is this a civil or criminal case?
 “May we view that weight again to inspect it?”
 
 {ChangeName("")}
-"The weight is presented to the court."
+(The weight is presented to the court.)
 
 {ChangeName("BERG")}
 “Now as far as you’re concerned, is there a right side or a particular way these things go on the bats?”
@@ -573,9 +597,12 @@ Is this a civil or criminal case?
 
 {ChangeName("BERG")}
 “That’s all I have. Defense rests.”
+{RemoveChar("Berg")}
+{RemoveChar("Whalen")}
 ->Closing
 
 === Closing ===
+{AddChar("Judge", "Neutral")}
 {ChangeName("JUDGE")}
 “Before the jury goes off to deliberate, I must read the instructions on what they are to do."
 "In the case heard today, On-Deck Inc. contends that CJ Whalen may not recover because he knew the danger surrounding the use of the bat weight."
@@ -587,15 +614,20 @@ Is this a civil or criminal case?
 "This alleged misuse was an independent, intervening cause of plaintiff’s injuries so that On-Deck Inc. would not be liable."
 "If you find that the bat weight was being used in a foreseeable or a normal incident of the risk created, then you must find for the plaintiffs.”
 “The jury will now go off and deliberate. We will meet again once a verdict has been reached.”
+{RemoveChar("Judge")}
 
+{AddChar("Berg", "Neutral")}
 {ChangeName("BERG")}
 "Well newbie, how do you think you did?"
 "You presented some pretty solid evidence but I have a feeling my cross-examination built too strong of a doubt in the jury’s mind.”
 
+{AddChar("Richards", "Neutral")}
 {ChangeName("RICHARDS")}
 “Mr. Berg, is it not rather unprofessional to discuss an active case outside of court?”
 
 {ChangeName("BERG")}
 "Mmmm I’ll show you unprofessional, old man.”
+{RemoveChar("Berg")}
+{RemoveChar("Richards")}
 
 ->END

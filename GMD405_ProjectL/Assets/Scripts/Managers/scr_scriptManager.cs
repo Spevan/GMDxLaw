@@ -12,9 +12,11 @@ public class scr_scriptManager : MonoBehaviour
         {
             if(script.name == ScriptName)
             {
+                Debug.Log("Script changed to " + ScriptName);
                 return script;
             }
         }
+        Debug.Log("Could not find script " +  ScriptName);
         return null;
     }
 }

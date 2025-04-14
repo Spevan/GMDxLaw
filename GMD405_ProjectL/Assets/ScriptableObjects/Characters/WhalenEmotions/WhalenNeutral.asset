@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WhalenNeutral
   m_EditorClassIdentifier: 
   Name: Neutral
-  Emotion: {fileID: 3459663121729055322, guid: 10d904de3655f4a4bb57f6f688b96380, type: 3}
+  Emotion: {fileID: 1906803434230857648, guid: 01e50c253f39f1c4580ed350c13bbc50, type: 3}

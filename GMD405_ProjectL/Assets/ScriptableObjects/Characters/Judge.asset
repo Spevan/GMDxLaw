@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Judge
   m_EditorClassIdentifier: 
   emotions:
-  - {fileID: 11400000, guid: 0d60658efa2cbd940bc165897fa71f43, type: 2}
+  - {fileID: 11400000, guid: eaa3fdb7906159a49838411201da1ffa, type: 2}

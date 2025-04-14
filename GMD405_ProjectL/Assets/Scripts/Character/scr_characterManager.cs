@@ -70,9 +70,11 @@ public class scr_characterManager : MonoBehaviour
     {
         foreach(var character in CharsInScene)
         {
-            if((character.name + "(Clone)") == charName)
+            if((character.name) == charName + "(Clone)")
             {
+                CharsInScene.Remove(character);
                 Destroy(character);
+                return;
             }
         }
     }

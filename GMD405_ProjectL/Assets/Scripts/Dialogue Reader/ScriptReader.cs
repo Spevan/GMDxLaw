@@ -64,6 +64,7 @@ public class ScriptReader : MonoBehaviour
     public void SetScript(string scriptName)
     {
         _inkJsonFile = scriptManager.SetScript(scriptName);
+        LoadStory();
     }
 
     void LoadStory()
@@ -72,7 +73,7 @@ public class ScriptReader : MonoBehaviour
 
         _StoryScript.BindExternalFunction("Name", (string charName) => ChangeName(charName));
         _StoryScript.BindExternalFunction("ChangeName", (string charName) => ChangeName(charName));
-        _StoryScript.BindExternalFunction("SetScript", (string  stringName) => ChangeName(stringName));
+        _StoryScript.BindExternalFunction("SetScript", (string  stringName) => SetScript(stringName));
 
         _StoryScript.BindExternalFunction("AddChar", (string charName, string emotion) => AddChar(charName, emotion));
         _StoryScript.BindExternalFunction("ChangeEmote", (string charName, string emotion) => ChangeEmote(charName, emotion));

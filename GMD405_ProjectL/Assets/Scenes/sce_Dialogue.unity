@@ -1591,7 +1591,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.7613, y: -25}
+  m_AnchoredPosition: {x: -6.7613, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1438926659
@@ -1611,10 +1611,11 @@ MonoBehaviour:
   - {fileID: 6760736558989778436, guid: b0bcc874a89ba1341a6e53e5880c9327, type: 3}
   - {fileID: 6760736558989778436, guid: 26012807ea39cc04d984ef3afe598c12, type: 3}
   - {fileID: 6760736558989778436, guid: e51d7beda4c14b141bf6811caa1db21a, type: 3}
+  - {fileID: 2650252181126313487, guid: e85b394776a6a8049ae84e503b505780, type: 3}
   CharsInScene: []
   CharSpawns:
-  - {fileID: 2061817696}
   - {fileID: 1438926657}
+  - {fileID: 2061817696}
   - {fileID: 1904276877}
 --- !u!1 &1450537159
 GameObject:
@@ -1781,7 +1782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 225, y: -25}
+  m_AnchoredPosition: {x: 225, y: -0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1911111497
@@ -1876,7 +1877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -223, y: -25}
+  m_AnchoredPosition: {x: -223, y: -0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807

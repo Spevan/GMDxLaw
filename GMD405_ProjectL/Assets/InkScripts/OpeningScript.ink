@@ -22,12 +22,13 @@ A man with slicked back grey hair and a bushy brown beard approaches and introdu
 {ToggleTextBox(false)}
 {ChangeEmote("Verdict", "Thinking")}
 {ChangeName("Me")}
-* *"Yes, that's me." -> ThatsMe
-* *"Nope, not me" -> NotMe
++"Yes, that's me." -> ThatsMe
++"Nope, not me" -> NotMe
 
 === ThatsMe ===
 {ToggleTextBox(false)}
 {ChangeEmote("Verdict", "Neutral")}
+"Yes, that's me."
 {ChangeName("Mr. Richards")}
 {ChangeEmote("Richards", "Happy")}
 "Ah then you're exactly who I'm looking for!"
@@ -36,6 +37,7 @@ A man with slicked back grey hair and a bushy brown beard approaches and introdu
 === NotMe ===
 {ToggleTextBox(false)}
 {ChangeEmote("Verdict", "Neutral")}
+"Nope, not me"
 {ChangeName("Mr. Richards")}
 {ChangeEmote("Richards", "Embarrassed")}
 "Oh! My apologies, you seemed so professional I- wait a minute..."
