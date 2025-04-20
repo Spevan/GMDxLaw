@@ -593,6 +593,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxClip: {fileID: 0}
+  sfxAudios:
+  - {fileID: 8300000, guid: cd96443a3bdd4a24f9cbf7ac2107eb30, type: 3}
+  - {fileID: 8300000, guid: 71ca71b32bea4c54aa93c7ce740ef105, type: 3}
+  - {fileID: 8300000, guid: 9c1031f175608e440a252de6fba2202b, type: 3}
+  - {fileID: 8300000, guid: 8447697947b59f04da2a6a1512188829, type: 3}
+  - {fileID: 8300000, guid: 0bd2c6b044c27084881caaacdc3854d6, type: 3}
+  - {fileID: 8300000, guid: 957ecaa0c81f6c84089da69c3208643f, type: 3}
+  - {fileID: 8300000, guid: 7c792ee6c216c824bbc260f893267dfe, type: 3}
 --- !u!1 &749107656
 GameObject:
   m_ObjectHideFlags: 0

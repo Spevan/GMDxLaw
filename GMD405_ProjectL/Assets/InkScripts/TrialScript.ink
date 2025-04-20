@@ -5,6 +5,7 @@ EXTERNAL RemoveChar(charName)
 EXTERNAL GetName()
 EXTERNAL ChangeFavorability(num)
 EXTERNAL ToggleTextBox(lockTB)
+EXTERNAL PlaySFX(clipName)
 
 {AddChar("Verdict", "Neutral")}
 {ChangeName("")}
@@ -14,6 +15,7 @@ EXTERNAL ToggleTextBox(lockTB)
 “All rise for the honorable Judge McWheily.”
 
 {ChangeName("")}
+{PlaySFX("DoubleGavel")}
 (The judge enters. Bangs the gavel. Everyone sits.)
 
 {AddChar("Judge", "Neutral")}
@@ -117,6 +119,7 @@ Is this a civil or criminal case?
 
 {AddChar("Judge", "Neutral")}
 {ChangeName("JUDGE")}
+{PlaySFX("GavelNoReverb")}
 "{GetName()}, this is not a criminal case. The government has not pressed any charges against the defense. Please, keep this in mind as you continue.”
 {RemoveChar("Judge")}
 
@@ -565,6 +568,7 @@ Is this a civil or criminal case?
 
 {AddChar("Judge", "Neutral")}
 {ChangeName("JUDGE")}
+{PlaySFX("NoBuildupGavel")}
 “Sustained.”
 {RemoveChar("Judge")}
 
@@ -614,6 +618,7 @@ Is this a civil or criminal case?
 "This alleged misuse was an independent, intervening cause of plaintiff’s injuries so that On-Deck Inc. would not be liable."
 "If you find that the bat weight was being used in a foreseeable or a normal incident of the risk created, then you must find for the plaintiffs.”
 “The jury will now go off and deliberate. We will meet again once a verdict has been reached.”
+{PlaySFX("DoubleGavel")}
 {RemoveChar("Judge")}
 
 {AddChar("Berg", "Neutral")}

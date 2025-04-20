@@ -85,6 +85,7 @@ public class ScriptReader : MonoBehaviour
         _StoryScript.BindExternalFunction("ChangeFavorability", (int num) => ChangeFavorability(num));
 
         _StoryScript.BindExternalFunction("ChangeScene", (string sceneName) => ChangeScene(sceneName));
+        _StoryScript.BindExternalFunction("PlaySFX", (string clipName) => PlaySFX(clipName));
     }
 
     public void DisplayNextLine()
@@ -241,5 +242,10 @@ public class ScriptReader : MonoBehaviour
     public void ChangeFavorability(int num)
     {
         scr_guiManager.instance.ChangeFavorability(num);
+    }
+
+    public void PlaySFX(string clipName)
+    {
+        scr_sfxManager.instance.PlaySFX(clipName);
     }
 }

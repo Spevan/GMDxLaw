@@ -21,19 +21,16 @@ public class scr_favorabilityBar : MonoBehaviour
         playerData.Favorability += num;
         if (SceneManager.GetActiveScene().name != "sce_jurorSelect")
         {
-            if (playerData.Favorability > 50)
+            if (playerData.Favorability > 50 && scr_musicManager.instance.musicClip != clipList[0])
             {
-                scr_musicManager.instance.musicClip = clipList[0];
                 scr_musicManager.instance.PlayMusic(clipList[0]);
             }
-            else if (playerData.Favorability < -50)
+            else if (playerData.Favorability < -50 && scr_musicManager.instance.musicClip != clipList[1])
             {
-                scr_musicManager.instance.musicClip = clipList[1];
                 scr_musicManager.instance.PlayMusic(clipList[1]);
             }
-            else
+            else if (scr_musicManager.instance.musicClip != clipList[2])
             {
-                scr_musicManager.instance.musicClip = clipList[2];
                 scr_musicManager.instance.PlayMusic(clipList[2]);
             }
         }
