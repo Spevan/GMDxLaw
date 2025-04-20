@@ -29,6 +29,7 @@ public class scr_musicManager : MonoBehaviour
 
     public void PlayMusic(AudioClip clip)
     {
+        musicClip = clip;
         musicSource.clip = clip;
         musicSource.Play();
     }
