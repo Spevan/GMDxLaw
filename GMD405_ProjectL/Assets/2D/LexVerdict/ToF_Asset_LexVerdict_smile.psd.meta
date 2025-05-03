@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ToF_Asset_LexVerdict_smile_0: 4061901927037406924
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ToF_Asset_HerrmannRichards_smile_0: -588936786522020001
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -23,10 +23,11 @@ public class scr_characterManager : MonoBehaviour
     {
         foreach(var character in Characters)
         {
-            if (character.name == charName)
+            if (character.name == charName && CharsInScene.Count <= 2)
             {
                 switch (CharsInScene.Count)
                 {
+                    default:
                     case 0:
                     {
                         CharsInScene.Add(
@@ -37,14 +38,14 @@ public class scr_characterManager : MonoBehaviour
                     case 1:
                     {
                         CharsInScene.Add(
-                            Instantiate(character, CharSpawns[2].transform.position,
+                            Instantiate(character, CharSpawns[1].transform.position,
                             Quaternion.identity, this.GetComponentInParent<Transform>()));
                         break;
                     }
                     case 2:
                     {
                         CharsInScene.Add(
-                            Instantiate(character, CharSpawns[1].transform.position,
+                            Instantiate(character, CharSpawns[2].transform.position,
                             Quaternion.identity, this.GetComponentInParent<Transform>()));
                         break;
                     }

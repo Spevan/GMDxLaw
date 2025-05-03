@@ -485,7 +485,7 @@ Is this a civil or criminal case?
 {ChangeFavorability(5)}
 "It appears that the inner circumference of that plastic ripped on the inside from the force of the man swinging, causing it to peel off.”
 “In my opinion, one swing had enough force behind it to cause that thing to tear off the bat.”
-->Closing
+->CrossExam
 
 === Weight ===
 {ToggleTextBox(false)}
@@ -508,7 +508,7 @@ Is this a civil or criminal case?
 {ChangeFavorability(-3)}
 {ChangeName("WHALEN")}
 “I have had no occasion since this accident to try it but I assume that is the case, yes.”
-->Closing
+->CrossExam
 
 
 === SoftballBat ===
@@ -533,9 +533,9 @@ Is this a civil or criminal case?
 {ChangeName("{GetName()}")}
 {ChangeEmote("Verdict", "Neutral")}
 “Thank you for your time and cooperation, Mr. Whalen. Prosecution rests.”
+{AddChar("Berg", "Smug")}
 {RemoveChar("Verdict")}
 
-{AddChar("Berg", "Smug")}
 {ChangeName("BERG")}
 “Mr. Whalen, you talked about not being able to wear the uniform outside of the RECOM building.”
 
@@ -645,6 +645,7 @@ Is this a civil or criminal case?
 {PlaySFX("DoubleGavel")}
 {RemoveChar("Judge")}
 
+{AddChar("Verdict", "Neutral")}
 {AddChar("Berg", "Smug")}
 {ChangeName("BERG")}
 "Well newbie, how do you think you did?"
@@ -657,7 +658,5 @@ Is this a civil or criminal case?
 {ChangeName("BERG")}
 {ChangeEmote("Berg", "Angry")}
 "Mmmm I’ll show you unprofessional, old man.”
-{RemoveChar("Berg")}
-{RemoveChar("Richards")}
 {GetEnding()}
 ->END

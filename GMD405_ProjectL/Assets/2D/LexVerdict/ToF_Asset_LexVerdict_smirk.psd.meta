@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ToF_Asset_LexVerdict_smirk_0: 6983119122997284503
+      ToF_Asset_LexVerdict_smirk_1: 6415833377954129804
+      ToF_Asset_LexVerdict_smirk_2: 1207666734004125725
+      ToF_Asset_LexVerdict_smirk_3: -3465534957754119445
+      ToF_Asset_LexVerdict_smirk_4: 1304753668775009874
+      ToF_Asset_LexVerdict_smirk_5: -8752667071096125434
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1615,8 +1615,8 @@ MonoBehaviour:
   CharsInScene: []
   CharSpawns:
   - {fileID: 2061817696}
-  - {fileID: 1438926657}
   - {fileID: 1904276877}
+  - {fileID: 1438926657}
 --- !u!1 &1450537159
 GameObject:
   m_ObjectHideFlags: 0

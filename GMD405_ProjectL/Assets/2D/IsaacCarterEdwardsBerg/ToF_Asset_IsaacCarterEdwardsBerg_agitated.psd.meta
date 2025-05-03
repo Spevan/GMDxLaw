@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ToF_Asset_IsaacCarterEdwardsBerg_agitated_0: -5046354883560400935
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

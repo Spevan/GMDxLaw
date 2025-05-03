@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ToF_Asset_HerrmannRichards_frown_0: -7329609104340107441
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

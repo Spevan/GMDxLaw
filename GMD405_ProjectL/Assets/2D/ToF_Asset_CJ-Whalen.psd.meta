@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ToF_Asset_CJ-Whalen_0: 3995602298293770697
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

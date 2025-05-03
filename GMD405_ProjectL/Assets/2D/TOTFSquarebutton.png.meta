@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TOTFSquarebutton_0: -5927519309223279777
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
