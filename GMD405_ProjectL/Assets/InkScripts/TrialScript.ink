@@ -6,6 +6,7 @@ EXTERNAL GetName()
 EXTERNAL ChangeFavorability(num)
 EXTERNAL ToggleTextBox(lockTB)
 EXTERNAL PlaySFX(clipName)
+EXTERNAL GetEnding()
 
 {AddChar("Verdict", "Neutral")}
 {ChangeName("")}
@@ -23,9 +24,11 @@ EXTERNAL PlaySFX(clipName)
 "Court is now in session. We are here for the case of CJ Whalen vs. On-Deck, Inc. Prosecution, are you ready?"
 
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Nervous")}
 "Y-yes, Your Honor."
 
 {ChangeName("Mr. Richards")}
+{ChangeEmote("Verdict", "Neutral")}
 {AddChar("Richards", "Neutral")}
 (Richards leans over to whisper.) "Don’t be intimidated by the judge or Berg… We got this."
 {RemoveChar("Richards")}
@@ -34,7 +37,7 @@ EXTERNAL PlaySFX(clipName)
 "And is the defense ready?"
 
 {ChangeName("Mr. Berg")}
-{AddChar("Berg", "Neutral")}
+{AddChar("Berg", "Smug")}
 "Why, of course, Your Honor. Though I must say, I question the necessity of this trial."
 "My client, On-Deck, Inc., is a reputable company! The prosecution will need more than a sob story to prove liability."
 {RemoveChar("Berg")}
@@ -93,7 +96,7 @@ Which type of lawsuit would this case fall under?
 === ProductLiability ===
 {ChangeFavorability(3)}
 {ToggleTextBox(true)}
-{ChangeEmote("Verdict", "Neutral")}
+{ChangeEmote("Verdict", "Happy")}
 {ChangeName("{GetName()}")}
 “The lawsuit which we shall be involved in today is a product liability action.”
 ->CivilOrCriminal 
@@ -124,6 +127,7 @@ Is this a civil or criminal case?
 {RemoveChar("Judge")}
 
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Nervous")}
 “Y-yes, your honor.”
 ->BatWeight
 
@@ -138,6 +142,7 @@ Is this a civil or criminal case?
 
 
 === BatWeight ===
+{ChangeEmote("Verdict", "Neutral")}
 {AddChar("Richards", "Neutral")}
 {ChangeName("RICHARDS")}
 “The product with which we are concerned today is called a bat-weight."
@@ -187,6 +192,7 @@ Is this a civil or criminal case?
 “Mr. Whalen stood at the dugout, just behind the on-deck batter who’s weight came off and hit him.”
 
 {ChangeName("RICHARDS")}
+{ChangeEmote("Richards", "Frown")}
 (whispering) “Try a more passive tone of voice and more emotional language next time.”
 ->FinalThoughts
 
@@ -265,8 +271,9 @@ Is this a civil or criminal case?
 
 === Struck ===
 {ToggleTextBox(false)}
+{ChangeEmote("Verdict", "Neutral")}
 {ChangeName("{GetName()}")}
-+“Where on your face were you struck?”
+“Where on your face were you struck?”
 
 {ChangeName("WHALEN")}
 “As you can see from my face, it struck me hard on the left side from above the eye all the way down to my jaw.”
@@ -288,6 +295,7 @@ Is this a civil or criminal case?
 === Problems ===
 {ToggleTextBox(false)}
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Neutral")}
 “What problems do you have presently that relate to your injury thus far?”
 
 {ChangeName("WHALEN")}
@@ -306,6 +314,7 @@ Is this a civil or criminal case?
 === Screaming ===
 {ToggleTextBox(false)}
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Shocked")}
 “You wake up screaming? What from?”
 
 {ChangeFavorability(-3)}
@@ -317,6 +326,7 @@ Is this a civil or criminal case?
 === Numb ===
 {ToggleTextBox(false)}
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Neutral")}
 “Where are you numb?”
 
 {ChangeName("WHALEN")}
@@ -335,6 +345,7 @@ Is this a civil or criminal case?
 === Restrictions ===
 {ChangeFavorability(1)}
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Neutral")}
 “Are you under any restrictions presently with your doctors because of your condition?”
 
 {ToggleTextBox(false)}
@@ -365,6 +376,7 @@ Is this a civil or criminal case?
 {ToggleTextBox(false)}
 {ChangeFavorability(1)}
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Neutral")}
 “Are you getting paid the same as you would?”
 
 {ChangeName("WHALEN")}
@@ -375,6 +387,7 @@ Is this a civil or criminal case?
 === Phone ===
 {ToggleTextBox(false)}
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Neutral")}
 “Any other type of work you can do at the troop other than phone work?”
 
 {ChangeName("WHALEN")}
@@ -392,6 +405,7 @@ Is this a civil or criminal case?
 === Accident ===
 {ToggleTextBox(false)}
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Neutral")}
 “How much time did you miss from work following the accident?”
 
 {ChangeName("WHALEN")}
@@ -414,6 +428,7 @@ Is this a civil or criminal case?
 
 === Feeling ===
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Neutral")}
 “You said you detect an increase in the sensation of feeling returning to your face, yes?”
 
 {ToggleTextBox(false)}
@@ -433,6 +448,7 @@ Is this a civil or criminal case?
 === Injury ===
 {ToggleTextBox(false)}
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Neutral")}
 "Mr. Whalen, can you describe what happened on the day of the injury?"
 
 {ChangeName("WHALEN")}
@@ -454,12 +470,14 @@ Is this a civil or criminal case?
 === Guy ===
 {ToggleTextBox(false)}
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Neutral")}
 “Have you had the occasion to talk to the guy who was swinging the bat since this happened?”
 
 {ChangeName("WHALEN")}
 “Yes, I have. He told me that when he swung it, he could see it fly off as if he was shooting a rifle. He saw it strike me in the face.”
 
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Smirk")}
 “We actually have the weight itself here if the jury would like to see it.”
 
 {ChangeName("WHALEN")}
@@ -472,6 +490,7 @@ Is this a civil or criminal case?
 === Weight ===
 {ToggleTextBox(false)}
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Neutral")}
 “How far from the end of the bat would the weight go until it reached a point where it could no longer move?”
 
 {ChangeName("WHALEN")}
@@ -495,6 +514,7 @@ Is this a civil or criminal case?
 === SoftballBat ===
 {ToggleTextBox(false)}
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Neutral")}
 “What kind of bat was he using? Was it a commonly-used softball bat?”
 
 {ChangeName("WHALEN")}
@@ -511,10 +531,11 @@ Is this a civil or criminal case?
 
 === CrossExam ===
 {ChangeName("{GetName()}")}
+{ChangeEmote("Verdict", "Neutral")}
 “Thank you for your time and cooperation, Mr. Whalen. Prosecution rests.”
 {RemoveChar("Verdict")}
 
-{AddChar("Berg", "Neutral")}
+{AddChar("Berg", "Smug")}
 {ChangeName("BERG")}
 “Mr. Whalen, you talked about not being able to wear the uniform outside of the RECOM building.”
 
@@ -522,6 +543,7 @@ Is this a civil or criminal case?
 “That’s correct, sir.”
 
 {ChangeName("BERG")}
+{ChangeEmote("Berg", "Neutral")}
 “Can you explain the significance of not being able to wear a uniform?”
 
 {ChangeName("WHALEN")}
@@ -552,9 +574,10 @@ Is this a civil or criminal case?
 “May we present that bat so that members of the jury can observe it?”
 
 {ChangeName("")}
-"The bat is presented to the court"
+(The bat is presented to the court.)
 
 {ChangeName("BERG")}
+{ChangeEmote("Berg", "Angry")}
 “How many people on the team use a bat like this one?”
 
 {ChangeFavorability(-3)}
@@ -573,6 +596,7 @@ Is this a civil or criminal case?
 {RemoveChar("Judge")}
 
 {ChangeName("BERG")}
+{ChangeEmote("Berg", "Neutral")}
 “Mr. Whalen, everyone on the team was using the same weight, correct?”
 
 {ChangeName("WHALEN")}
@@ -621,18 +645,19 @@ Is this a civil or criminal case?
 {PlaySFX("DoubleGavel")}
 {RemoveChar("Judge")}
 
-{AddChar("Berg", "Neutral")}
+{AddChar("Berg", "Smug")}
 {ChangeName("BERG")}
 "Well newbie, how do you think you did?"
 "You presented some pretty solid evidence but I have a feeling my cross-examination built too strong of a doubt in the jury’s mind.”
 
-{AddChar("Richards", "Neutral")}
+{AddChar("Richards", "Happy")}
 {ChangeName("RICHARDS")}
 “Mr. Berg, is it not rather unprofessional to discuss an active case outside of court?”
 
 {ChangeName("BERG")}
+{ChangeEmote("Berg", "Angry")}
 "Mmmm I’ll show you unprofessional, old man.”
 {RemoveChar("Berg")}
 {RemoveChar("Richards")}
-
+{GetEnding()}
 ->END

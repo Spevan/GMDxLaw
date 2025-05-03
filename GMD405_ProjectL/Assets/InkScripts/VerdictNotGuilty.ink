@@ -6,6 +6,7 @@ EXTERNAL GetName()
 EXTERNAL ChangeFavorability(num)
 EXTERNAL ToggleTextBox(lockTB)
 EXTERNAL PlaySFX(clipName)
+EXTERNAL ChangeScene(sceneName)
 
 {AddChar("Judge", "Neutral")}
 {ChangeName("Judge")}
@@ -13,3 +14,6 @@ EXTERNAL PlaySFX(clipName)
 
 “Not guilty!"
 "No payment shall be made to Mr. Whalen. Court dismissed.”
+{ChangeScene("sce_credits")}
+
+->END

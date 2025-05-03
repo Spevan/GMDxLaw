@@ -19,15 +19,15 @@ EXTERNAL SetScript(scriptName)
 “Good morning. Who are you?”
 
 {ChangeName("Grumpy Guy")}
-//{ChangeEmote("BERG", "angry")}
+{ChangeEmote("Berg", "Rage")}
 “Who am I? Who are you that you think you can just show up suddenly and take over this case that I have been working diligently on for months!”
 
 {ChangeName("Mr. Richards")}
-{AddChar("Richards", "Neutral")}
+{AddChar("Richards", "Frown")}
 “Mr. Berg, please treat this courtroom and my assistant with the decorum they both deserve and stop shouting.”
 
 {ChangeName("Mr. Berg")}
-//{ChangeEmote("BERG", "neutral")}
+{ChangeEmote("Berg", "Smug")}
 “Assistant, huh? I see. Getting too old to keep up, Herrmann?”
 
 {RemoveChar("Berg")}
@@ -35,10 +35,10 @@ EXTERNAL SetScript(scriptName)
 (Berg cracks a cheeky smile and turns back towards his desk to sit.)
 
 {ChangeName("Mr. Richards")}
-{ChangeEmote("Richards", "Neutral")}
+{ChangeEmote("Richards", "Facepalm")}
 “Ignore him, {GetName()}. He will do his best to get under your skin but he’s just jealous that you ended up with this case because we fired him.”
 
-{AddChar("Berg", "Neutral")}
+{AddChar("Berg", "Angry")}
 {ChangeName("Mr. Berg")}
 “Unjustly fired, I might add!”
 {RemoveChar("Berg")}

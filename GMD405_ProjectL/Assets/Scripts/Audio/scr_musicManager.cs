@@ -27,7 +27,7 @@ public class scr_musicManager : MonoBehaviour
         PlayMusic(musicClip);
     }
 
-    public void PlayMusic(AudioClip clip)
+    public virtual void PlayMusic(AudioClip clip)
     {
         musicClip = clip;
         musicSource.clip = clip;

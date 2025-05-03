@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BergNeutral
   m_EditorClassIdentifier: 
   Name: Neutral
-  Emotion: {fileID: 3764943196001882611, guid: 3a804656f9589444f99a1924161d240a, type: 3}
+  Emotion: {fileID: -4264105399400663950, guid: 03907f2c6756c4f48bb1d671dcccd2a2, type: 3}

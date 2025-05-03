@@ -6,6 +6,7 @@ EXTERNAL GetName()
 EXTERNAL ChangeFavorability(num)
 EXTERNAL ToggleTextBox(lockTB)
 EXTERNAL PlaySFX(clipName)
+EXTERNAL ChangeScene(sceneName)
 
 {AddChar("Judge", "Neutral")}
 {ChangeName("Judge")}
@@ -13,4 +14,8 @@ EXTERNAL PlaySFX(clipName)
 
 "Guilty!"
 
-"The jury finds that On-Deck Inc. owes Mr. Whalen a collective fund of $150,000. You have 90 days to arrange payment to Mr. Whalen with the courts. Court dismissed."
+"The jury finds that On-Deck Inc. owes Mr. Whalen a collective fund of $150,000."
+"You have 90 days to arrange payment to Mr. Whalen with the courts. Court dismissed."
+{ChangeScene("sce_credits")}
+
+->END

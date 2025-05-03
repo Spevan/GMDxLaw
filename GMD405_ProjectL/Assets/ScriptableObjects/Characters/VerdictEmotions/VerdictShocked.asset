@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: VerdictShocked
   m_EditorClassIdentifier: 
   Name: Shocked
-  Emotion: {fileID: -2438197544125437455, guid: 7ee767736a7a8e44bbcfdadad6d9ae30, type: 3}
+  Emotion: {fileID: -1629286587474959902, guid: 7b1e6a5a99d7edc4e9246a9ef90541de, type: 3}

@@ -86,6 +86,7 @@ public class ScriptReader : MonoBehaviour
 
         _StoryScript.BindExternalFunction("ChangeScene", (string sceneName) => ChangeScene(sceneName));
         _StoryScript.BindExternalFunction("PlaySFX", (string clipName) => PlaySFX(clipName));
+        _StoryScript.BindExternalFunction("GetEnding", () => GetEnding());
     }
 
     public void DisplayNextLine()
@@ -247,5 +248,17 @@ public class ScriptReader : MonoBehaviour
     public void PlaySFX(string clipName)
     {
         scr_sfxManager.instance.PlaySFX(clipName);
+    }
+
+    public void GetEnding()
+    {
+        if (scr_guiManager.instance.FavorableNum >= 0)
+        {
+            ChangeScene("sce_win");
+        }
+        else
+        {
+            ChangeScene("sce_lose");
+        }
     }
 }

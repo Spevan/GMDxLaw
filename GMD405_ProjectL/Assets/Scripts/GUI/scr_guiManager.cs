@@ -26,7 +26,7 @@ public class scr_guiManager : MonoBehaviour
         if (scr_dataPersistenceManager.instance.playerData.Favorability != FavorableNum)
         {
             FavorableNum = scr_dataPersistenceManager.instance.playerData.Favorability;
-            favorabilityBar.ChangeMarkerPos(FavorableNum);
+            favorabilityBar.LoadMarkerPos(FavorableNum);
         }
     }
 

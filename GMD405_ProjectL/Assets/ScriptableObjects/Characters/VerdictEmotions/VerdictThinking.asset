@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: VerdictThinking
   m_EditorClassIdentifier: 
   Name: Thinking
-  Emotion: {fileID: 562861223778794759, guid: a63af218954d24346979f4302b06b8f2, type: 3}
+  Emotion: {fileID: 4698078761765044507, guid: 9b1d967e07dbac341bb3ccba867d5cd0, type: 3}

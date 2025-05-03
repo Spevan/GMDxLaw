@@ -14,22 +14,23 @@ public class scr_favorabilityBar : MonoBehaviour
         playerData = scr_dataPersistenceManager.instance.playerData;
     }
 
-    private void Start()
+    public void LoadMarkerPos(int num)
     {
-        ChangeMarkerPos(0);
+        favorMarker.transform.Translate(new Vector3(num, 0, 0));
+        playerData.Favorability += num;
     }
 
     public void ChangeMarkerPos(int num)
     {
         favorMarker.transform.Translate(new Vector3(num, 0, 0));
         playerData.Favorability += num;
-        if (scr_musicManager.instance.enabled && SceneManager.GetActiveScene().name != "sce_jurorSelect")
+        if (scr_musicManager.instance != null && SceneManager.GetActiveScene().name != "sce_jurorSelect")
         {
-            if (playerData.Favorability > 50 && !scr_musicManager.instance.musicClip.name.Equals(clipList[0].name))
+            if (playerData.Favorability > 25 && !scr_musicManager.instance.musicClip.name.Equals(clipList[0].name))
             {
                 scr_musicManager.instance.PlayMusic(clipList[0]);
             }
-            else if (playerData.Favorability < -50 && !scr_musicManager.instance.musicClip.name.Equals(clipList[1].name))
+            else if (playerData.Favorability < -25 && !scr_musicManager.instance.musicClip.name.Equals(clipList[1].name))
             {
                 scr_musicManager.instance.PlayMusic(clipList[1]);
             }
@@ -37,11 +38,6 @@ public class scr_favorabilityBar : MonoBehaviour
             {
                 scr_musicManager.instance.PlayMusic(clipList[2]);
             }
-        }
-        else if(scr_musicManager.instance == null)
-        {
-            ChangeMarkerPos(0);
-            Debug.Log("check");
         }
     }
 }

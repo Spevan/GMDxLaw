@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RichardsNeutral
   m_EditorClassIdentifier: 
   Name: Neutral
-  Emotion: {fileID: 8075734327611853869, guid: b9605b9c1f4a0c04b824d7033aba17cc, type: 3}
+  Emotion: {fileID: 3977973472573087462, guid: 315a751e53c3a1640a94e96129336e84, type: 3}
