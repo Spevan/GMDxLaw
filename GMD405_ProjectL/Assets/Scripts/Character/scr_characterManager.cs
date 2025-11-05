@@ -25,28 +25,11 @@ public class scr_characterManager : MonoBehaviour
         {
             if (character.name == charName && CharsInScene.Count <= 2)
             {
-                switch (CharsInScene.Count)
+                foreach(GameObject spawn in CharSpawns)
                 {
-                    default:
-                    case 0:
+                    if (spawn.transform.childCount == 0)
                     {
-                        CharsInScene.Add(
-                            Instantiate(character, CharSpawns[0].transform.position,
-                                Quaternion.identity, this.GetComponentInParent<Transform>()));
-                        break;
-                    }
-                    case 1:
-                    {
-                        CharsInScene.Add(
-                            Instantiate(character, CharSpawns[1].transform.position,
-                            Quaternion.identity, this.GetComponentInParent<Transform>()));
-                        break;
-                    }
-                    case 2:
-                    {
-                        CharsInScene.Add(
-                            Instantiate(character, CharSpawns[2].transform.position,
-                            Quaternion.identity, this.GetComponentInParent<Transform>()));
+                        CharsInScene.Add(Instantiate(character, spawn.transform.position, Quaternion.identity, spawn.transform));
                         break;
                     }
                 }
